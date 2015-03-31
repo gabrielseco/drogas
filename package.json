@@ -11,7 +11,9 @@
   "mainOutput": "main",
 
   "scripts": {
-   "start": "grunt serve"
+   "start": "grunt serve",
+   "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt <your task name>"
+
  },
 
   "dependencies": {
