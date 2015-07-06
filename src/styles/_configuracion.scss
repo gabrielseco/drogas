@@ -1,0 +1,25 @@
+.configuracion{
+  width: 360px;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  padding: 30px;
+  padding-top: 200px;
+  padding-bottom: 15px;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.mensaje{
+  margin-top:10px;
+
+  a{
+    color:#29292c;
+
+    &:hover{
+      color:#ccc;
+    }
+  }
+}

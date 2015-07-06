@@ -1,0 +1,40 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+//
+// 1. Set default font family to sans-serif.
+// 2. Prevent iOS text size adjust after orientation change, without disabling
+//    user zoom.
+//
+
+
+// Links
+// ==========================================================================
+
+//
+// Remove the gray background color from active links in IE 10.
+//
+
+body{
+  background-color:#F1F1F1;
+}
+
+
+a {
+  background-color: transparent;
+  color:#d9d9d9;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+//
+// Improve readability when focused and also mouse hovered in all browsers.
+//
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+a:hover, a:focus {
+   color: #fff;
+   text-decoration: none; }

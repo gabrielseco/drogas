@@ -9,14 +9,11 @@ import UINavbar from './UI/Navbar';
 const RouteHandler = Router.RouteHandler;
 
 let App = React.createClass({
-
-    componentDidMount() { this.props.flux.getActions('todos').fetchTodos(); },
-
     render() {
 
         return (
-            <div className='main container'>
-                <FluxComponent {...this.props} connectToStores={['todos']}>
+            <div className='container-fluid'>
+                <FluxComponent {...this.props} >
                     <UINavbar />
                     <RouteHandler />
                 </FluxComponent>

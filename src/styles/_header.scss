@@ -1,0 +1,62 @@
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.navbar{
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  position: fixed;
+  z-index: 8000;
+  min-height: inherit;
+  width: 100%;
+  background: #29292c;
+  -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.navbar.default {
+  width: 100%;
+  position: absolute;
+}
+
+.navbar-header {
+  background: #29292c;
+}
+
+.nav ul li{
+  display:inline;
+}
+
+.nav > li > a:hover {
+  color: #72b6af;
+  background-color: #29292c;
+
+}
+
+.dropdown-menu{
+  background-color:#29292c;
+  background-clip: border-box;
+}
+
+.dropdown{
+  margin-right:50px;
+}
+
+
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background: #29292c;
+}
+
+.dropdown-menu > li > a{
+  background: #29292c;
+  color:#fff;
+
+}
+
+.dropdown-menu > li > a:hover{
+  background: #29292c;
+  color: #72b6af;
+}

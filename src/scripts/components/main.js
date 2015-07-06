@@ -12,10 +12,9 @@ import InterfaceRest from './Interfaces/Rest';
 
 try {
 
-    require('../../styles/main.sass');
+    require('../../styles/main.scss');
 
-    const config = JSON.parse(window.unescape(document.getElementsByName('config/app')[0].content));
-    const flux = new AppFlux(config);
+    const flux = new AppFlux();
 
     const Route = Router.Route,
         DefaultRoute = Router.DefaultRoute;

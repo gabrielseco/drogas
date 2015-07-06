@@ -1,0 +1,56 @@
+.contacto{
+  max-width: 500px;
+  background-color:#fff;
+  margin:auto;
+  margin-top:100px;
+  padding: 26px 24px 46px;
+  font-weight: 400;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+  box-shadow: 0 1px 3px rgba(0,0,0,.13);
+
+
+  input[type=text] {
+      width: 100%;
+      font-family: Montserrat,Arial,Sans-Serif;
+      font-size: 14px;
+      background: #F5F5F5;
+      border: 2px solid #F5F5F5;
+      padding: 14px 18px;
+      -webkit-transition: border-color .2s ease-in;
+      -moz-transition: border-color .2s ease-in;
+      transition: border-color .2s ease-in;
+      line-height:35px;
+    }
+
+  textarea{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #efefef;
+    color: #373737;
+    border: 0;
+    border-radius: 3px;
+    width: 100%;
+    padding: 14px 18px;
+    font-family: Oxygen,Arial,Sans-Serif;
+    font-size: 14px;
+    margin-bottom: 30px;
+    background: #F5F5F5;
+    border: 2px solid #F5F5F5;
+    -webkit-transition: border-color .2s ease-in;
+    -moz-transition: border-color .2s ease-in;
+    transition: border-color .2s ease-in;
+  }
+
+  input[type=submit]{
+    background-color: black;
+    color: #fff;
+  }
+
+  label{
+    margin-top:10px;
+  }
+
+}
