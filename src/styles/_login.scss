@@ -58,4 +58,9 @@ input[type=text] {
   .alert-warning {
     padding:20px;
   }
+
+  .error-form {
+    border:2px solid red !important;
+    outline: 0;
+  }
 }

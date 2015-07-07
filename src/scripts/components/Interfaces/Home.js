@@ -1,22 +1,35 @@
 'use strict';
 
 import React from 'react/addons';
-import FormLogin from '../Login/FormLogin';
+import BreadCrumb from '../UI/BreadCrumb';
+import Footer from '../UI/Footer';
 
-
-var value = {
-  usuario: null,
-  password: null
-};
-
+var texto = "";
+var centro = "";
 
 let InterfaceHome = React.createClass({
+    getInitialState(){
+      return {
+        centro: ''
+      };
+    },
+    componentWillMount(){
+      this.props.flux.getActions('login').getCentro().then((res)=> {
+        console.log('res bread', res);
+        centro = res[0].Procedencia;
+        this.setState({
+          centro: centro
+        });
+      });
+
+    },
     render() {
 
 
         return (
             <div>
-              <FormLogin value={value} />
+            <BreadCrumb centro={centro} texto={texto}/>
+            <Footer/>
             </div>
         );
     }
