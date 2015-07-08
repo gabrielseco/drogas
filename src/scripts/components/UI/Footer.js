@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react/addons';
+import {Link} from 'react-router';
 
 
 let Footer = React.createClass({
@@ -8,7 +9,7 @@ let Footer = React.createClass({
         return (
             <div className="footer">
               <div className="pull-right">
-                <a href="/contacto"></a>
+                <Link to="/contacto">Contacto</Link>
               </div>
             </div>
         );

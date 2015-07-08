@@ -24,6 +24,19 @@ let serverLogIn = async function(apiendpoint, formContent){
 
 };
 
+let serverChangePassword = async function(apiendpoint, formContent) {
+
+  var token = localStorage.getItem('TOKEN');
+  var url = "cambiar_password?username="+formContent.usuario+ "&password="+formContent.password+"&token="+token;
+
+  console.log('url');
+
+  var velneo = await axios.get(apiendpoint + url);
+
+  return velneo.data;
+
+};
+
 let serverGetCentro = async function(apiendpoint){
 
   var ID = localStorage.getItem('ID');
@@ -39,18 +52,6 @@ let serverGetCentro = async function(apiendpoint){
 
 };
 
-let serverCreateTodo = function(apiendpoint, todoContent) {
-
-    const newTodo = { id: uuid(), title: todoContent };
-    axios.post(apiendpoint + '/todos', newTodo);
-
-    return newTodo; // passed to the store without awaiting REST response for optimistic add
-};
-
-let serverDeleteTodo = function(apiendpoint, todo) {
-    axios.delete(apiendpoint + '/todos/' + todo.get('id'));
-    return todo; // passed to the store without awaiting REST response for optimistic delete
-};
 
 export class LoginActions extends Actions {
 
@@ -61,6 +62,11 @@ export class LoginActions extends Actions {
 
     async logIn(formContent) {
       const response = await serverLogIn(this.apiendpoint, formContent);
+      return response;
+    }
+
+    async changePassword(formContent) {
+      const response = await serverChangePassword(this.apiendpoint, formContent);
       return response;
     }
 

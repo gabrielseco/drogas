@@ -9,6 +9,7 @@ import { AppFlux } from '../flux/AppFlux';
 import App from './App';
 import InterfaceLogin from './Interfaces/Login';
 import InterfaceHome from './Interfaces/Home';
+import InterfaceConfiguracion from './Interfaces/Configuracion';
 import InterfaceRest from './Interfaces/Rest';
 
 try {
@@ -24,6 +25,7 @@ try {
       <Route name="root" path="/" handler={App}>
         <DefaultRoute handler={InterfaceLogin} />
         <Route name="home" path="/home" handler={InterfaceHome} />
+        <Route name="configuracion" path="/configuracion" handler={InterfaceConfiguracion} />
       </Route>
     );
 

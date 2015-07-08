@@ -29,7 +29,7 @@ let UINavbar = React.createClass({
              <a title="Configuracion" href="#" data-toggle="dropdown" className="dropdown-toggle js-activated">Configuración</a>
               <ul role="menu" className="dropdown-menu">
                  <li className="">
-                   <a title="Cambiar Contraseña" href="/configuracion">Cambiar Contraseña</a>
+                   <Link to="configuracion" >Cambiar Contraseña</Link>
                 </li>
                 <li className="">
                   <a onClick={this.cerrar} title="Cerrar Sesión" href="#">Cerrar Sesión</a>
@@ -49,9 +49,9 @@ let UINavbar = React.createClass({
                           <a className="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse">
                             <i></i>
                           </a>
-                          <a className="navbar-brand" href={ruta}>
+                          <Link className="navbar-brand" to={ruta}>
                               Plan de drogas
-                          </a>
+                          </Link>
                       </div>
                 </div>
                 {list}
