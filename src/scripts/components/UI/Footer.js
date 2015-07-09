@@ -8,8 +8,10 @@ let Footer = React.createClass({
     render() {
         return (
             <div className="footer">
-              <div className="pull-right">
-                <Link to="/contacto">Contacto</Link>
+              <div className="container-fluid">
+                <div className="pull-right">
+                  <Link to="/contacto">Contacto</Link>
+                </div>
               </div>
             </div>
         );

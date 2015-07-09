@@ -52,6 +52,42 @@ let serverGetCentro = async function(apiendpoint){
 
 };
 
+let serverSendMessage = async function(apiendpoint, formContent) {
+  var TOKEN = localStorage.getItem('TOKEN');
+  var ID = localStorage.getItem('ID');
+  var nombre = formContent.nombre;
+  var asunto = formContent.asunto;
+  var observaciones = formContent.observaciones;
+
+  if(nombre !== '' && asunto !== '' && observaciones !== '' ) {
+    var url = "contacto?ID="+ ID +"&ASUNTO="+asunto+ "&observaciones="+observaciones+"&token="+TOKEN;
+    var velneo = await axios.get(apiendpoint + url);
+    if(velneo.data[0].Resultado === 200){
+      var json = {
+      'key': 'fvenfDgW5B4JccHRDj-vQg',
+        'message': {
+          'from_email': 'ggarciaseco@gmail.com',
+          'to': [
+              {
+                'email': 'casaguito@msn.com',
+                'name': '',
+                'type': 'to'
+              }
+            ],
+          'autotext': true,
+          'subject': asunto,
+          'html': 'Usuario: '+nombre+'<br/> Asunto: '+asunto+'<br/> Observaciones: '+observaciones
+        }
+    };
+    var mandrill = await axios.post('https://mandrillapp.com/api/1.0/messages/send.json', json);
+        console.log('mandrill', mandrill);
+    }
+
+    return velneo.data;
+  }
+
+};
+
 
 export class LoginActions extends Actions {
 
@@ -72,6 +108,11 @@ export class LoginActions extends Actions {
 
     async getCentro(){
       const response = await serverGetCentro(this.apiendpoint);
+      return response;
+    }
+
+    async sendContact(formContent) {
+      const response = await serverSendMessage(this.apiendpoint, formContent);
       return response;
     }
 

@@ -28,8 +28,8 @@ let InterfaceHome = React.createClass({
 
         return (
             <div>
-            <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
-            <Footer/>
+              <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
+              <Footer/>
             </div>
         );
     }
