@@ -7,6 +7,7 @@ import {Link} from 'react-router';
 let Footer = React.createClass({
     render() {
         return (
+          <div id="envuelve_pie">
             <div className="footer">
               <div className="container-fluid">
                 <div className="pull-right">
@@ -14,6 +15,7 @@ let Footer = React.createClass({
                 </div>
               </div>
             </div>
+          </div>
         );
     }
 });

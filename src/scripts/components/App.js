@@ -3,7 +3,6 @@
 import React from 'react/addons';
 import Router from 'react-router';
 import FluxComponent from 'flummox/component';
-
 import UINavbar from './UI/Navbar';
 
 const RouteHandler = Router.RouteHandler;

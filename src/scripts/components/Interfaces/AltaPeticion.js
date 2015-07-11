@@ -2,22 +2,16 @@
 
 import React from 'react/addons';
 import BreadCrumb from '../UI/BreadCrumb';
-import FormContacto from '../Login/FormContacto';
 import Footer from '../UI/Footer';
+import FormPeticiones from '../Peticiones/FormPeticiones';
 
-var value = {
-  nombre: null,
-  asunto: null,
-  observaciones: null
-};
 
 var centro = "";
 
-let InterfaceContacto = React.createClass({
+let AltaPeticion = React.createClass({
     getInitialState(){
       return {
-        centro: '',
-        value: value
+        centro: ''
       };
     },
     componentWillMount(){
@@ -32,12 +26,12 @@ let InterfaceContacto = React.createClass({
     render() {
         return (
             <div>
-              <BreadCrumb centro={centro} texto="Inicio &gt; Contacto"/>
-              <FormContacto value={value} flux={this.props.flux} />
+              <BreadCrumb centro={centro} texto="Inicio &gt; Alta Petición"/>
+              <FormPeticiones/>
               <Footer/>
             </div>
         );
     }
 });
 
-module.exports = InterfaceContacto;
+module.exports = AltaPeticion;

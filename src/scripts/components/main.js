@@ -11,6 +11,8 @@ import InterfaceLogin from './Interfaces/Login';
 import InterfaceHome from './Interfaces/Home';
 import InterfaceConfiguracion from './Interfaces/Configuracion';
 import InterfaceContacto from './Interfaces/Contacto';
+import AltaPeticion from './Interfaces/AltaPeticion';
+
 
 import InterfaceRest from './Interfaces/Rest';
 
@@ -29,7 +31,7 @@ try {
         <Route name="home" path="/home" handler={InterfaceHome} />
         <Route name="configuracion" path="/configuracion" handler={InterfaceConfiguracion} />
         <Route name="contacto" path="/contacto" handler={InterfaceContacto} />
-
+        <Route name="altaPeticion" path="/altapeticion" handler={AltaPeticion} />
       </Route>
     );
 

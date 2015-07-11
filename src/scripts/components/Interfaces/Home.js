@@ -1,11 +1,18 @@
 'use strict';
 
 import React from 'react/addons';
+import moment from 'moment';
 import BreadCrumb from '../UI/BreadCrumb';
+import BuscadorFechas from '../UI/BuscadorFechas';
 import Footer from '../UI/Footer';
+import Table from '../UI/Table';
+import { Link } from 'react-router';
+
 
 var texto = "";
 var centro = "";
+var fechaInicial = moment().subtract(1, 'week'); //moment().substract(1, 'week');
+var fechaFinal = '';
 
 let InterfaceHome = React.createClass({
     getInitialState(){
@@ -21,7 +28,6 @@ let InterfaceHome = React.createClass({
           centro: centro
         });
       });
-
     },
     render() {
 
@@ -29,6 +35,9 @@ let InterfaceHome = React.createClass({
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
+              <BuscadorFechas fechaInicial={fechaInicial} fechaFinal={fechaFinal} />
+              <Link to="altaPeticion">Alta</Link>
+              <Table/>
               <Footer/>
             </div>
         );

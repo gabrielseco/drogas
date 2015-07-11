@@ -9,22 +9,25 @@
   "dist": "dist",
   "mainInput": "main",
   "mainOutput": "main",
-
   "scripts": {
-   "start": "grunt serve",
-   "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt serve"
-
- },
-
+    "start": "grunt serve",
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt serve"
+  },
   "dependencies": {
     "axios": "^0.5.2",
     "babel-runtime": "^4.7.16",
     "flummox": "2.13.2",
-    "immutable": "^3.6.4",
-    "react": "*",
-    "react-router": "^0.11.6",
     "grunt": "~0.4.5",
-    "grunt-cli":"*"
+    "grunt-cli": "*",
+    "immutable": "^3.6.4",
+    "lodash": "^3.10.0",
+    "moment": "^2.10.3",
+    "react": "*",
+    "react-datepicker": "^0.10.0",
+    "react-pagify": "^0.6.5",
+    "react-router": "^0.11.6",
+    "react-select-box": "^2.0.1",
+    "reactabular": "^0.6.4"
   },
   "devDependencies": {
     "babel-core": "^4.7.16",
