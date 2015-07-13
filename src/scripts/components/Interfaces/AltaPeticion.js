@@ -11,7 +11,9 @@ var centro = "";
 let AltaPeticion = React.createClass({
     getInitialState(){
       return {
-        centro: ''
+        centro: '',
+        pacientes: '',
+        medicos: ''
       };
     },
     componentWillMount(){
@@ -22,16 +24,32 @@ let AltaPeticion = React.createClass({
           centro: centro
         });
       });
+      this.props.flux.getActions('peticiones').fetchMedicos().then((res)=> {
+        console.log('res medicos', res);
+        this.setState({
+          medicos: res
+        });
+      });
+      this.props.flux.getActions('peticiones').fetchPacientes().then((res)=> {
+        console.log('res pacientes', res);
+        this.setState({
+          pacientes: res
+        });
+      });
     },
     render() {
+        if(this.state.pacientes === '' || this.state.medicos === ''){
+          return (<div></div>);
+        } else {
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Alta Petición"/>
-              <FormPeticiones/>
+              <FormPeticiones medicos={this.state.medicos} pacientes={this.state.pacientes}/>
               <Footer/>
             </div>
         );
     }
+  }
 });
 
 module.exports = AltaPeticion;

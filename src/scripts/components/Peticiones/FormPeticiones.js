@@ -2,6 +2,7 @@
 
 import React from 'react/addons';
 import Datepicker from 'react-datepicker';
+import Select from '../UI/Select';
 import { State, Navigation, TransitionHook } from 'react-router';
 
 
@@ -17,6 +18,8 @@ var mensajes = {
   corregirCampos: 'Inténtelo más tarde.',
   exito: 'Se ha envíado la petición correctamente'
 };
+
+var textoSelect = "No has seleccionado ninguna opción";
 
 
 var FormPeticiones = React.createClass({
@@ -90,49 +93,25 @@ var FormPeticiones = React.createClass({
             <div className="form-group">
               <label className="control-label col-md-2">Identificación</label>
               <div className="col-md-4">
-                <input type="text" ref="identificacion" value=""/>
+                <input type="text" ref="identificacion"/>
               </div>
               <label className="control-label col-md-2">Médico</label>
               <div className="col-md-4">
-                <select ref="medicos">
-                  <option>Gabriel</option>
-                  <option>Gabriel</option>
-                  <option>Gabriel</option>
-                  <option>Gabriel</option>
-                </select>
+                <Select
+                  ID="medicos"
+                  text={textoSelect}
+                  data={this.props.medicos}>
+                  </Select>
               </div>
             </div>
-            <div className="form-group">
-              <label className="control-label col-md-2">Apellidos</label>
+            <div class="form-group">
+              <label className="control-label col-md-2">Paciente</label>
               <div className="col-md-4">
-                <input type="text" ref="apellidos" value=""/>
-              </div>
-              <label className="control-label col-md-2">Nombre</label>
-              <div className="col-md-4">
-              <input type="text" ref="nombre" value=""/>
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-md-2">DNI</label>
-              <div className="col-md-4">
-                <input type="text" ref="dni" value=""/>
-              </div>
-              <label className="control-label col-md-2">Fecha Nacimiento</label>
-              <div className="col-md-4">
-                <Datepicker selected={this.state.fechaNacimiento} onChange={this.handleFechaNacimiento} />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-md-2">Historia</label>
-              <div className="col-md-4">
-                <textarea type="text" ref="historia" value=""></textarea>
-              </div>
-              <label className="control-label col-md-2">Historia</label>
-              <div className="col-md-4">
-                <select ref="sexo">
-                  <option>H</option>
-                  <option>M</option>
-                </select>
+                <Select
+                  ID="pacientes"
+                  text={textoSelect}
+                  data={this.props.pacientes}>
+                  </Select>
               </div>
             </div>
           </form>

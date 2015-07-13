@@ -1,4 +1,4 @@
-input[type=text] {
+input[type=text], input[type=password], select,textarea {
     width: 100%;
     font-family: Montserrat,Arial,Sans-Serif;
     font-size: 14px;
@@ -11,19 +11,10 @@ input[type=text] {
     margin-top: 10px;
   }
 
-  input[type=password] {
-      width: 100%;
-      font-family: Montserrat,Arial,Sans-Serif;
-      font-size: 14px;
-      background: #F5F5F5;
-      border: 2px solid #F5F5F5;
-      padding: 14px 18px;
-      -webkit-transition: border-color .2s ease-in;
-      -moz-transition: border-color .2s ease-in;
-      transition: border-color .2s ease-in;
-      margin-top: 10px;
-      margin-bottom:10px;
-    }
+  select{
+    height: 50px;
+  }
+
 
   input[type=submit]{
     background-color: black;
@@ -40,6 +31,9 @@ input[type=text] {
     height: inherit;
     line-height: none;
     box-shadow: none;
+ }
+ .control-label{
+   margin-top: 20px;
  }
 
   .alert-warning {
