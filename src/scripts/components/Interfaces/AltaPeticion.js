@@ -13,7 +13,8 @@ let AltaPeticion = React.createClass({
       return {
         centro: '',
         pacientes: '',
-        medicos: ''
+        medicos: '',
+        analiticas: ''
       };
     },
     componentWillMount(){
@@ -36,6 +37,15 @@ let AltaPeticion = React.createClass({
           pacientes: res
         });
       });
+
+      this.props.flux.getActions('peticiones').fetchAnaliticas().then((res)=> {
+        console.log('res analiticas', res);
+        this.setState({
+          analiticas: res
+        });
+      });
+
+
     },
     render() {
         if(this.state.pacientes === '' || this.state.medicos === ''){

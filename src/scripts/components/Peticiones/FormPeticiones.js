@@ -2,9 +2,9 @@
 
 import React from 'react/addons';
 import Datepicker from 'react-datepicker';
+import ReactSuperSelect from 'React-Super-Select';
 import Select from '../UI/Select';
 import { State, Navigation, TransitionHook } from 'react-router';
-
 
 var clasesForms = {
   errorForm: 'errorForm',
@@ -86,6 +86,16 @@ var FormPeticiones = React.createClass({
       }
     },
     render(){
+      console.log(this.props.medicos);
+
+      var handlerExample = function(option) {
+        var output = [
+          'Searchable Option Item Chosen = {\n',
+          '\tID: ', option.ID, '\n',
+          '\tvalor: ', option.valor, '\n};'
+        ];
+        console.log(output.join(''));
+      };
     return (
       <div className="container">
         <div className="row">
@@ -97,21 +107,19 @@ var FormPeticiones = React.createClass({
               </div>
               <label className="control-label col-md-2">Médico</label>
               <div className="col-md-4">
-                <Select
-                  ID="medicos"
-                  text={textoSelect}
-                  data={this.props.medicos}>
-                  </Select>
+                <ReactSuperSelect ref="medicos" placeholder="Seleccione una opción"
+                                  dataSource={this.props.medicos}
+                                  onChange={handlerExample}
+                                  searchable={true}/>
               </div>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label className="control-label col-md-2">Paciente</label>
               <div className="col-md-4">
-                <Select
-                  ID="pacientes"
-                  text={textoSelect}
-                  data={this.props.pacientes}>
-                  </Select>
+              <ReactSuperSelect ref="pacientes" placeholder="Seleccione una opción"
+                                dataSource={this.props.pacientes}
+                                onChange={handlerExample}
+                                searchable={true}/>
               </div>
             </div>
           </form>

@@ -18,8 +18,8 @@ let serverFetchPeticionesMedicos = async function(apiendpoint) {
 
   for(var i = 0; i < medicos.length; i++){
     var obj = {
-      ID: medicos[i].ID,
-      valor: medicos[i].Nombre
+      id: medicos[i].ID,
+      name: medicos[i].Nombre
     };
 
     medicosSelect.push(obj);
@@ -43,19 +43,50 @@ let serverFetchPeticionesPacientes = async function(apiendpoint){
   pacientes = pacientes.data;
 
   for(var i = 0; i < pacientes.length; i++){
-    var nombre = pacientes[i].Nombre + " "+ pacientes[i].Apellidos + " " + pacientes[i].Historia;
-    var obj = {
-      ID: pacientes[i].ID,
-      valor: nombre
-    };
+      var nombre = pacientes[i].Nombre + " "+ pacientes[i].Apellidos + " " + pacientes[i].Historia;
+      var obj = {
+        id: pacientes[i].ID,
+        name: nombre
+      };
 
-    pacientesSelect.push(obj);
+      pacientesSelect.push(obj);
+
   }
 
 
   return pacientesSelect;
 
 };
+
+let serverFetchPeticionesAnaliticas = async function(apiendpoint){
+  var ID = localStorage.getItem('ID');
+  var TOKEN = localStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+
+  var analiticasSelect = [];
+
+  var url = "analiticas_peticiones?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA;
+
+  console.log('analiticas url', url);
+
+  let analiticas = await axios.get(apiendpoint + url);
+  analiticas = analiticas.data;
+
+  for(var i = 0; i < analiticas.length; i++){
+      var obj = {
+        id: analiticas[i].ID,
+        name: analiticas[i].Nombre
+      };
+
+      analiticasSelect.push(obj);
+
+  }
+
+
+  return analiticasSelect;
+
+};
+
 
 export class PeticionesActions extends Actions {
 
@@ -73,6 +104,13 @@ export class PeticionesActions extends Actions {
     async fetchPacientes(){
       const response = await serverFetchPeticionesPacientes(this.apiendpoint);
       return response;
+    }
+
+    async fetchAnaliticas(){
+
+      const response = await serverFetchPeticionesAnaliticas(this.apiendpoint);
+      return response;
+
     }
 
 }
