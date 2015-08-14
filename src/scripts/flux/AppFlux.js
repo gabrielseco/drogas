@@ -19,7 +19,9 @@ export class AppFlux extends Flux {
          // The extra argument(s) are passed to the Action / Store constructors
     }
 
-    getApiendpoint() { return "http://vlab.es/drogas/"; }
+    getApiendpoint() {
+      return "http://vlab.es/drogas/";
+    }
 
 
 }

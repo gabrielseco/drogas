@@ -6,6 +6,7 @@ import ReactSuperSelect from 'React-Super-Select';
 import Select from '../UI/Select';
 import { State, Navigation, TransitionHook } from 'react-router';
 
+
 var clasesForms = {
   errorForm: 'errorForm',
   noDisplay: 'hidden'
@@ -26,7 +27,10 @@ var FormPeticiones = React.createClass({
     mixins: [ Navigation, TransitionHook, State ],
     getInitialState(){
       return {
-        fechaNacimiento: ''
+        fecha: '',
+        medicos: '',
+        pacientes: '',
+        analiticas: ''
       };
     },
     handleForm(e){
@@ -35,16 +39,16 @@ var FormPeticiones = React.createClass({
       e.preventDefault();
 
       var data = {
-        nombre: this.refs.nombre.getDOMNode().value,
-        asunto: this.refs.asunto.getDOMNode().value,
-        observaciones: this.refs.observaciones.getDOMNode().value
+        identificacion: this.refs.identificacion.getDOMNode().value,
+        pacientes: this.state.pacientes,
+        medicos: this.state.medicos,
+        analiticas: this.state.analiticas
       };
 
-      console.log(data);
+      console.log(JSON.stringify(data));
 
-      this.iterateErrors(data);
+      //this.iterateErrors(data);
 
-      if(error === false) {
         return false;
         //hago la llamada al formulario y entro
         /*this.props.flux.getActions('login').sendContact(data).then((res) =>{
@@ -63,7 +67,6 @@ var FormPeticiones = React.createClass({
           }
 
         });*/
-      }
 
     },
     iterateErrors(data){
@@ -85,21 +88,29 @@ var FormPeticiones = React.createClass({
         field.className = '';
       }
     },
+    handlerMedicos(option){
+      this.setState({
+        medicos: option
+      });
+    },
+    handlerPacientes(option){
+      this.setState({
+        pacientes: option
+      });
+    },
+    handlerAnaliticas(option){
+      this.setState({
+        analiticas: option
+      });
+    },
     render(){
-      console.log(this.props.medicos);
 
-      var handlerExample = function(option) {
-        var output = [
-          'Searchable Option Item Chosen = {\n',
-          '\tID: ', option.ID, '\n',
-          '\tvalor: ', option.valor, '\n};'
-        ];
-        console.log(output.join(''));
-      };
+
     return (
       <div className="container">
         <div className="row">
-          <form className="form-horizontal">
+          <form className="form-horizontal" onSubmit={this.handleForm}id="addPeticiones" method="post" role="form">
+
             <div className="form-group">
               <label className="control-label col-md-2">Identificación</label>
               <div className="col-md-4">
@@ -109,7 +120,7 @@ var FormPeticiones = React.createClass({
               <div className="col-md-4">
                 <ReactSuperSelect ref="medicos" placeholder="Seleccione una opción"
                                   dataSource={this.props.medicos}
-                                  onChange={handlerExample}
+                                  onChange={this.handlerMedicos}
                                   searchable={true}/>
               </div>
             </div>
@@ -118,13 +129,25 @@ var FormPeticiones = React.createClass({
               <div className="col-md-4">
               <ReactSuperSelect ref="pacientes" placeholder="Seleccione una opción"
                                 dataSource={this.props.pacientes}
-                                onChange={handlerExample}
+                                onChange={this.handlerPacientes}
                                 searchable={true}/>
               </div>
-            </div>
+              <label className="control-label col-md-2">Drogas</label>
+              <div className="col-md-4">
+              <ReactSuperSelect ref="analiticas" placeholder="Seleccione una opción"
+                                dataSource={this.props.analiticas}
+                                onChange={this.handlerAnaliticas}
+                                searchable={true}
+                                tags={true}/>
+              </div>
+              </div>
+              <br/><br/>
+              <div className="pull-right">
+                <input type="submit" value="Enviar"/>
+              </div>
           </form>
         </div>
-
+        <br/>
       </div>
     );
   }

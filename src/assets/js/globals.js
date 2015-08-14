@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  //positionFooter();
-  //$(window).resize(positionFooter);
 
 });
 

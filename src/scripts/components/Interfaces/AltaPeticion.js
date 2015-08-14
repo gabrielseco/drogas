@@ -54,7 +54,7 @@ let AltaPeticion = React.createClass({
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Alta Petición"/>
-              <FormPeticiones medicos={this.state.medicos} pacientes={this.state.pacientes}/>
+              <FormPeticiones medicos={this.state.medicos} pacientes={this.state.pacientes} analiticas={this.state.analiticas}/>
               <Footer/>
             </div>
         );
