@@ -45,28 +45,26 @@ var FormPeticiones = React.createClass({
         analiticas: this.state.analiticas
       };
 
+
       console.log(JSON.stringify(data));
 
-      //this.iterateErrors(data);
+      this.props.flux.getActions('peticiones').sendPeticion(data).then((res)=> {
+        console.log('res alta peticion', res);
+        if(res[0].Resultado === 200){
+          console.log('Petición enviada');
+          document.getElementById('mensaje_exito').className = 'alert-info';
+        }
+        else if(res[0].Resultado === 500){
+          console.log('error al enviar el contacto');
+          document.getElementById('mensaje_error').className = 'alert-warning';
+          this.iterateErrors(data);
+        }
+        else {
+          console.log('VELNEO NO FUNCIONA');
+        }
+      });
 
-        return false;
-        //hago la llamada al formulario y entro
-        /*this.props.flux.getActions('login').sendContact(data).then((res) =>{
-          console.log('res', res);
-          if(res[0].Resultado === 200){
-            console.log('Contacto envíado mira el correo');
-            document.getElementById('mensaje_exito').className = 'alert-info';
-          }
-          else if(res[0].Resultado === 500){
-            console.log('error al enviar el contacto');
-            document.getElementById('mensaje_error').className = 'alert-warning';
-            this.iterateErrors(data);
-          }
-          else {
-            console.log('VELNEO NO FUNCIONA');
-          }
 
-        });*/
 
     },
     iterateErrors(data){

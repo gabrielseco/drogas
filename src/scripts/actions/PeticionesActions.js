@@ -37,7 +37,7 @@ let serverFetchPeticionesPacientes = async function(apiendpoint){
 
   var url = "pacientes_peticiones?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA;
 
-  console.log('pacientes url', url);
+  //console.log('pacientes url', url);
 
   let pacientes = await axios.get(apiendpoint + url);
   pacientes = pacientes.data;
@@ -67,7 +67,7 @@ let serverFetchPeticionesAnaliticas = async function(apiendpoint){
 
   var url = "analiticas_peticiones?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA;
 
-  console.log('analiticas url', url);
+  //console.log('analiticas url', url);
 
   let analiticas = await axios.get(apiendpoint + url);
   analiticas = analiticas.data;
@@ -84,6 +84,41 @@ let serverFetchPeticionesAnaliticas = async function(apiendpoint){
 
 
   return analiticasSelect;
+
+};
+
+let serverSendPeticion = async function (apiendpoint, data) {
+
+  //construyo la petición
+
+  var paciente = data.pacientes.id;
+  var medico = data.medicos.id;
+  var identificacion = data.identificacion;
+
+  var ID = localStorage.getItem('ID');
+  var TOKEN = localStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+
+  var analitica = null;
+  var velneo = null;
+  var url = "alta_peticion?id="+ID+"&procedencia="+ID_PROCEDENCIA+"&token="+TOKEN+"&pacientes="+paciente+"&medicos="+medico+"&identificacion="+identificacion;
+  console.log('alta petición', apiendpoint + url);
+  velneo = await axios.get(apiendpoint + url);
+  console.log('velneo res send'+JSON.stringify(velneo.data));
+
+  var ID_PETICION = velneo.data[0].ID_PETICION;
+
+  //Con el ID podemos insertar las analíticas
+
+  for(var i = 0; i < data.analiticas.length; i++){
+    url = "alta_analiticas?id="+ID+"&procedencia="+ID_PROCEDENCIA+"&token="+TOKEN+"&analiticas="+data.analiticas[i].id+"&ID_PETICION="+ID_PETICION;
+    console.log('analiticas url', url);
+    velneo = await axios.get(apiendpoint + url);
+  }
+
+
+
+  return velneo.data;
 
 };
 
@@ -111,6 +146,11 @@ export class PeticionesActions extends Actions {
       const response = await serverFetchPeticionesAnaliticas(this.apiendpoint);
       return response;
 
+    }
+
+    async sendPeticion(peticionData){
+      const response = await serverSendPeticion(this.apiendpoint, peticionData);
+      return response;
     }
 
 }

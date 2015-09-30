@@ -20,7 +20,8 @@ export class AppFlux extends Flux {
     }
 
     getApiendpoint() {
-      return "http://vlab.es/drogas/";
+      var url = "http://192.168.1.130:5412/drogas/";
+      return url;
     }
 
 
