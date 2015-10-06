@@ -11,7 +11,7 @@ import { Link } from 'react-router';
 
 var texto = "";
 var centro = "";
-var fechaInicial = moment().subtract(1, 'week'); //moment().substract(1, 'week');
+var fechaInicial = moment().subtract(1, 'week');
 var fechaFinal = '';
 
 let InterfaceHome = React.createClass({
@@ -22,7 +22,6 @@ let InterfaceHome = React.createClass({
     },
     componentWillMount(){
       this.props.flux.getActions('login').getCentro().then((res)=> {
-        console.log('res bread', res);
         centro = res[0].Procedencia;
         this.setState({
           centro: centro
@@ -35,7 +34,7 @@ let InterfaceHome = React.createClass({
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
-              <BuscadorFechas fechaInicial={fechaInicial} fechaFinal={fechaFinal} />
+              <BuscadorFechas/>
               <Link to="altaPeticion">Alta</Link>
               <Table/>
               <Footer/>

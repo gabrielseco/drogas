@@ -1,9 +1,7 @@
 'use strict';
 
 import React from 'react/addons';
-import Datepicker from 'react-datepicker';
-
-
+import Datepicker from './Datepicker';
 
 let BuscadorFechas = React.createClass({
     getInitialState(){
@@ -28,10 +26,11 @@ let BuscadorFechas = React.createClass({
             <div className="col-md-offset-4 col-md-8 fechas-peticiones">
               <label>Fecha Inicio</label>
               <div className="div_datepicker">
-                <Datepicker selected={this.state.fechaInicial} onChange={this.handleFechaIChange} />
+              <Datepicker/>
               </div>
+              <label>Fecha Final</label>
               <div className="div_datepicker">
-                <Datepicker selected={this.state.fechaFinal} onChange={this.handleFechaFChange}/>
+              <Datepicker/>
               </div>
               <button className="btn btn-default">Buscar Peticiones</button>
             </div>

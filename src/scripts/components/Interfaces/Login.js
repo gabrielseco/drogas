@@ -2,6 +2,8 @@
 
 import React from 'react/addons';
 import FormLogin from '../Login/FormLogin';
+import localStorage from 'localStorage';
+
 
 
 var value = {
@@ -11,6 +13,12 @@ var value = {
 
 
 let InterfaceLogin = React.createClass({
+  cerrar(){
+    localStorage.clear();
+  },
+  componentDidMount(){
+      this.cerrar();
+  },
     render() {
 
 

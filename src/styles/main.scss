@@ -9,14 +9,29 @@
         '../../bower_components/spinkit/scss/spinners/3-wave';
 
 
+
 /*CUSTOM SCSS*/
 @import "_normalize";
 @import "_header.scss";
 @import "_select.scss";
 @import "_breadcrumb.scss";
 @import "_forms";
-@import "_datepicker";
 @import "_login.scss";
 @import "_configuracion.scss";
 @import "_contacto.scss";
 @import "_footer.scss";
+
+.input-group{
+  width:30%;
+}
+
+.div_datepicker{
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.fechas-peticiones{
+  padding-top: 40px;
+}

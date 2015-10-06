@@ -12,6 +12,7 @@ import InterfaceHome from './Interfaces/Home';
 import InterfaceConfiguracion from './Interfaces/Configuracion';
 import InterfaceContacto from './Interfaces/Contacto';
 import AltaPeticion from './Interfaces/AltaPeticion';
+import Datepicker from './UI/Datepicker';
 
 
 import InterfaceRest from './Interfaces/Rest';
@@ -32,6 +33,8 @@ try {
         <Route name="configuracion" path="/configuracion" handler={InterfaceConfiguracion} />
         <Route name="contacto" path="/contacto" handler={InterfaceContacto} />
         <Route name="altaPeticion" path="/altapeticion" handler={AltaPeticion} />
+        <Route name="/datepicker" path="/datepicker" handler={Datepicker} />
+
       </Route>
     );
 
