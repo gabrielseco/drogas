@@ -11,7 +11,6 @@ export class AppFlux extends Flux {
 
     constructor() {
         super();
-
         this.createActions('login', LoginActions, this.getApiendpoint());
         this.createActions('peticiones', PeticionesActions, this.getApiendpoint());
 

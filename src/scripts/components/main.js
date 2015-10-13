@@ -12,6 +12,7 @@ import InterfaceHome from './Interfaces/Home';
 import InterfaceConfiguracion from './Interfaces/Configuracion';
 import InterfaceContacto from './Interfaces/Contacto';
 import AltaPeticion from './Interfaces/AltaPeticion';
+import ModificarPeticion from './Interfaces/ModificarPeticion';
 import Datepicker from './UI/Datepicker';
 
 
@@ -33,6 +34,7 @@ try {
         <Route name="configuracion" path="/configuracion" handler={InterfaceConfiguracion} />
         <Route name="contacto" path="/contacto" handler={InterfaceContacto} />
         <Route name="altaPeticion" path="/altapeticion" handler={AltaPeticion} />
+        <Route name="modificarPeticion" path="/modificarpeticion/:id" handler={ModificarPeticion} />
         <Route name="/datepicker" path="/datepicker" handler={Datepicker} />
 
       </Route>

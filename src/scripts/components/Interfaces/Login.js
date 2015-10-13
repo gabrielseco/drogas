@@ -16,9 +16,6 @@ let InterfaceLogin = React.createClass({
   cerrar(){
     localStorage.clear();
   },
-  componentDidMount(){
-      this.cerrar();
-  },
     render() {
 
 

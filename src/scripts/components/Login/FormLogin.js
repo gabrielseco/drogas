@@ -86,8 +86,9 @@ var FormLogin = React.createClass({
           <p id='mensaje_error' className={clase}>{mensajes.errorCampos} <br/> {mensajes.corregirCampos}</p>
           <input type="text" ref="usuario" id="usuario" defaultValue={this.props.value.usuario} required placeholder="Usuario" />
           <input type="password" ref="password" id="password" defaultValue={this.props.value.password} required placeholder="Contraseña" />
+          <br/>
           <input type="submit" className="btn pull-right"
-                  value="Entrar"
+                  value="Entrar" id='login'
                   onClick={this.handleForm}>
          </input>
        </div>

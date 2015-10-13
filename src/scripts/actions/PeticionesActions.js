@@ -122,6 +122,36 @@ let serverSendPeticion = async function (apiendpoint, data) {
 
 };
 
+let serverFetchPeticion = async function(apiendpoint, params){
+  var ID = localStorage.getItem('ID');
+  var TOKEN = localStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+  var analiticas = new Array();
+
+  var url = "peticion?ID="+params+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&USER_ID="+ID;
+
+  var velneo_1 = await axios.get(apiendpoint + url);
+
+  url = "peticion_analiticas?ID="+params+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&USER_ID="+ID;
+
+
+  var velneo_2 = await axios.get(apiendpoint + url);
+
+  for(var i = 0;i < velneo_2.data.length;i++) {
+    analiticas.push(velneo_2.data[i].Analitica);
+  }
+
+  console.log('analiticas',analiticas);
+
+  velneo_1.data.analiticas = analiticas
+
+  console.log('velneo_1',velneo_1.data);
+
+  return velneo_1.data;
+
+
+};
+
 
 export class PeticionesActions extends Actions {
 
@@ -151,6 +181,14 @@ export class PeticionesActions extends Actions {
     async sendPeticion(peticionData){
       const response = await serverSendPeticion(this.apiendpoint, peticionData);
       return response;
+    }
+
+    async fetchPeticion(params){
+
+      const response = await serverFetchPeticion(this.apiendpoint, params);
+
+      return response;
+
     }
 
 }

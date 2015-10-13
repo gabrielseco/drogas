@@ -23,7 +23,7 @@ var mensajes = {
 var textoSelect = "No has seleccionado ninguna opción";
 
 
-var FormPeticiones = React.createClass({
+var FormModificarPeticiones = React.createClass({
     mixins: [ Navigation, TransitionHook, State ],
     getInitialState(){
       return {
@@ -108,12 +108,12 @@ var FormPeticiones = React.createClass({
     return (
       <div className="container">
         <div className="row">
-          <form className="form-horizontal" onSubmit={this.handleForm}id="addPeticiones" method="post" role="form">
+          <form className="form-horizontal" onSubmit={this.handleForm} id="addPeticiones" method="post" role="form">
 
             <div className="form-group">
               <label className="control-label col-md-2">Identificación</label>
               <div className="col-md-4">
-                <input type="text" ref="identificacion"/>
+                <input type="text" ref="identificacion" defaultValue={this.props.form[0].Identificacion}/>
               </div>
               <label className="control-label col-md-2">Médico</label>
               <div className="col-md-4">
@@ -152,4 +152,4 @@ var FormPeticiones = React.createClass({
   }
   });
 
-module.exports = FormPeticiones;
+module.exports = FormModificarPeticiones;
