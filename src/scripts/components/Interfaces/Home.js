@@ -35,7 +35,7 @@ let InterfaceHome = React.createClass({
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
               <BuscadorFechas/>
-              <Link to="altaPeticion">Alta</Link>
+                <Link to="altaPeticion" className="btn btn-default pull-right">Alta</Link>
               <Table/>
               <Footer/>
             </div>
