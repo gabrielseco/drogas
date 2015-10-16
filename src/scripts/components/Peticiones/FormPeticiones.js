@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react/addons';
-import Datepicker from 'react-datepicker';
 import ReactSuperSelect from 'React-Super-Select';
+import Loading from '../UI/Loading';
 import Select from '../UI/Select';
 import { State, Navigation, TransitionHook } from 'react-router';
 
@@ -104,6 +104,7 @@ var FormPeticiones = React.createClass({
     },
     render(){
 
+    if(this.state.pacientes !== '' || this.state.analiticas !== ''){
 
     return (
       <div className="container">
@@ -149,6 +150,9 @@ var FormPeticiones = React.createClass({
         <br/>
       </div>
     );
+    } else {
+      return (<Loading/>);
+    }
   }
   });
 

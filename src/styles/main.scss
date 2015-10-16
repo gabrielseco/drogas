@@ -2,40 +2,15 @@
 
 /*LIBRARIES*/
 
-
-@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-
-@import '../../bower_components/spinkit/scss/spinners/1-rotating-plane',
-        '../../bower_components/spinkit/scss/spinners/3-wave';
-
-
-
+@import "spinkit/wave";
 /*CUSTOM SCSS*/
 @import "_normalize";
 @import "_header.scss";
 @import "_select.scss";
 @import "_breadcrumb.scss";
 @import "_forms";
+@import "_buscador";
 @import "_login.scss";
 @import "_configuracion.scss";
 @import "_contacto.scss";
 @import "_footer.scss";
-
-.input-group{
-  width:30%;
-}
-
-.div_datepicker{
-  display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
-  white-space: nowrap;
-}
-
-.fechas-peticiones{
-  padding-top: 40px;
-}
-
-.input-group {
-    width: 55%;
-}

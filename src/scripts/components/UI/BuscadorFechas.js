@@ -25,6 +25,10 @@ let BuscadorFechas = React.createClass({
 
       console.log('send',params);
 
+      this.props.flux.getActions('peticiones').peticionesFrom(params).then((res)=> {
+        console.log('data for table', res);
+      });
+
     },
     render() {
         return (
@@ -38,7 +42,6 @@ let BuscadorFechas = React.createClass({
             <label htmlFor="fecha Final">Fecha Final</label>
             <Datepicker name="fechaFinal"/>
           </div>
-          <input ref="example"/>
           <button type="button" className="btn btn-default" onClick={this.handle}>Enviar Peticiones</button>
           </form>
           </div>

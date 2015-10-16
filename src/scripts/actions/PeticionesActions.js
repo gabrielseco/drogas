@@ -152,6 +152,20 @@ let serverFetchPeticion = async function(apiendpoint, params){
 
 };
 
+let serverFetchPeticionesFrom = async function(apiendpoint, params){
+
+  var ID = localStorage.getItem('ID');
+  var TOKEN = localStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+
+  var url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&ID_PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI"+params.fechaInicio+"&FECHAF="+params.fechaFinal;
+
+  var velneo = await(apiendpoint + params);
+
+  return velneo.data;
+
+};
+
 
 export class PeticionesActions extends Actions {
 
@@ -174,6 +188,13 @@ export class PeticionesActions extends Actions {
     async fetchAnaliticas(){
 
       const response = await serverFetchPeticionesAnaliticas(this.apiendpoint);
+      return response;
+
+    }
+
+    async peticionesFrom(params){
+
+      const response = await serverFetchPeticionesFrom(this.apiendpoint, params);
       return response;
 
     }
