@@ -3,12 +3,7 @@
 import { Actions } from 'flummox';
 import axios from 'axios';
 import uuid from '../utils/uuid'
-import localStorage from 'localStorage';
-
-let serverFetchTodos = async function(apiendpoint) {
-    let todos = await axios.get(apiendpoint + '/todos');
-    return todos.data.slice(0, 7);  // passed to the store after REST response (obviously); sliced for the demo
-};
+import sessionStorage from '../lib/sessionStorage';
 
 let serverLogIn = async function(apiendpoint, formContent){
   var token = uuid();
@@ -17,16 +12,19 @@ let serverLogIn = async function(apiendpoint, formContent){
 
   var velneo = await axios.get(apiendpoint + url);
   console.log('velneo', velneo.data);
-  localStorage.setItem('ID_PROCEDENCIA', velneo.data[0].ID_PROCEDENCIA);
-  localStorage.setItem('TOKEN', token);
-  localStorage.setItem('ID', velneo.data[0].ID);
+
+  sessionStorage.setItem('ID_PROCEDENCIA',velneo.data[0].ID_PROCEDENCIA);
+  sessionStorage.setItem('TOKEN',token);
+  sessionStorage.setItem('ID',velneo.data[0].ID);
+
+
   return velneo.data;
 
 };
 
 let serverChangePassword = async function(apiendpoint, formContent) {
 
-  var token = localStorage.getItem('TOKEN');
+  var token = sessionStorage.getItem('TOKEN');
   var url = "cambiar_password?username="+formContent.usuario+ "&password="+formContent.password+"&token="+token;
 
   console.log('url');
@@ -39,8 +37,8 @@ let serverChangePassword = async function(apiendpoint, formContent) {
 
 let serverGetCentro = async function(apiendpoint){
 
-  var ID = localStorage.getItem('ID');
-  var TOKEN = localStorage.getItem('TOKEN');
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
 
   var url = "usuario?ID="+ ID + "&token="+ TOKEN;
   console.log('url', url);
@@ -53,8 +51,8 @@ let serverGetCentro = async function(apiendpoint){
 };
 
 let serverSendMessage = async function(apiendpoint, formContent) {
-  var TOKEN = localStorage.getItem('TOKEN');
-  var ID = localStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID = sessionStorage.getItem('ID');
   var nombre = formContent.nombre;
   var asunto = formContent.asunto;
   var observaciones = formContent.observaciones;

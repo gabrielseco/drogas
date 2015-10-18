@@ -3,6 +3,7 @@
 import React from 'react/addons';
 import BreadCrumb from '../UI/BreadCrumb';
 import Footer from '../UI/Footer';
+import Loading from '../UI/Loading';
 import FormPeticiones from '../Peticiones/FormPeticiones';
 
 
@@ -26,20 +27,20 @@ let AltaPeticion = React.createClass({
         });
       });
       this.props.flux.getActions('peticiones').fetchMedicos().then((res)=> {
-        //console.log('res medicos', res);
+        console.log('res medicos', res);
         this.setState({
           medicos: res
         });
       });
       this.props.flux.getActions('peticiones').fetchPacientes().then((res)=> {
-        //console.log('res pacientes', res);
+        console.log('res pacientes', res);
         this.setState({
           pacientes: res
         });
       });
 
       this.props.flux.getActions('peticiones').fetchAnaliticas().then((res)=> {
-        //console.log('res analiticas', res);
+        console.log('res analiticas', res);
         this.setState({
           analiticas: res
         });
@@ -48,8 +49,8 @@ let AltaPeticion = React.createClass({
 
     },
     render() {
-        if(this.state.pacientes === '' || this.state.medicos === ''){
-          return (<div></div>);
+        if(this.state.pacientes === '' || this.state.medicos === '' || this.state.analiticias === ''){
+          return (<Loading/>);
         } else {
         return (
             <div>

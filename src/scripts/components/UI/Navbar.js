@@ -2,20 +2,19 @@
 
 import React from 'react/addons';
 import {Link, State} from 'react-router';
-import localStorage from 'localStorage';
+import sessionStorage from '../../lib/sessionStorage';
 
 const cx = React.addons.classSet;
 
 let UINavbar = React.createClass({
     mixins: [State],
     cerrar(){
-      localStorage.clear();
+      sessionStorage.clear();
       this.transitionTo('/');
     },
     render() {
 
-      var token = localStorage.getItem('TOKEN');
-      console.log('token navbar', token);
+      var token = sessionStorage.getItem('TOKEN');
       var list = (<div></div>);
       var ruta = "/";
 
@@ -26,7 +25,6 @@ let UINavbar = React.createClass({
         <div className="nav nav-collapse  pull-right">
          <ul id="menu-standard-navigation" className="nav navbar-nav">
            <li><Link to="home">Peticiones</Link></li>
-           <li><Link to="home">Pacientes</Link></li>
            <li id="" className="dropdown active">
              <a title="Configuracion" href="#" data-toggle="dropdown" className="dropdown-toggle js-activated">Configuración</a>
               <ul role="menu" className="dropdown-menu">

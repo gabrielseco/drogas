@@ -103,9 +103,6 @@ var FormPeticiones = React.createClass({
       });
     },
     render(){
-
-    if(this.state.pacientes !== '' || this.state.analiticas !== ''){
-
     return (
       <div className="container">
         <div className="row">
@@ -150,9 +147,6 @@ var FormPeticiones = React.createClass({
         <br/>
       </div>
     );
-    } else {
-      return (<Loading/>);
-    }
   }
   });
 

@@ -3,11 +3,11 @@
 import { Actions } from 'flummox';
 import axios from 'axios';
 import uuid from '../utils/uuid'
-import localStorage from 'localStorage';
+import sessionStorage from '../lib/sessionStorage';
 
 let serverFetchPeticionesMedicos = async function(apiendpoint) {
-  var ID = localStorage.getItem('ID');
-  var TOKEN = localStorage.getItem('TOKEN');
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
 
   var medicosSelect = [];
 
@@ -29,9 +29,9 @@ let serverFetchPeticionesMedicos = async function(apiendpoint) {
 };
 
 let serverFetchPeticionesPacientes = async function(apiendpoint){
-  var ID = localStorage.getItem('ID');
-  var TOKEN = localStorage.getItem('TOKEN');
-  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
 
   var pacientesSelect = [];
 
@@ -59,9 +59,9 @@ let serverFetchPeticionesPacientes = async function(apiendpoint){
 };
 
 let serverFetchPeticionesAnaliticas = async function(apiendpoint){
-  var ID = localStorage.getItem('ID');
-  var TOKEN = localStorage.getItem('TOKEN');
-  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
 
   var analiticasSelect = [];
 
@@ -95,9 +95,9 @@ let serverSendPeticion = async function (apiendpoint, data) {
   var medico = data.medicos.id;
   var identificacion = data.identificacion;
 
-  var ID = localStorage.getItem('ID');
-  var TOKEN = localStorage.getItem('TOKEN');
-  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
 
   var analitica = null;
   var velneo = null;
@@ -123,9 +123,9 @@ let serverSendPeticion = async function (apiendpoint, data) {
 };
 
 let serverFetchPeticion = async function(apiendpoint, params){
-  var ID = localStorage.getItem('ID');
-  var TOKEN = localStorage.getItem('TOKEN');
-  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
   var analiticas = new Array();
 
   var url = "peticion?ID="+params+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&USER_ID="+ID;
@@ -154,9 +154,9 @@ let serverFetchPeticion = async function(apiendpoint, params){
 
 let serverFetchPeticionesFrom = async function(apiendpoint, params){
 
-  var ID = localStorage.getItem('ID');
-  var TOKEN = localStorage.getItem('TOKEN');
-  var ID_PROCEDENCIA = localStorage.getItem('ID_PROCEDENCIA');
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
 
   var url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&ID_PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI"+params.fechaInicio+"&FECHAF="+params.fechaFinal;
 

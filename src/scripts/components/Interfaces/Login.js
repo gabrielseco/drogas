@@ -2,7 +2,7 @@
 
 import React from 'react/addons';
 import FormLogin from '../Login/FormLogin';
-import localStorage from 'localStorage';
+import sessionStorage from '../../lib/sessionStorage';
 
 
 
@@ -14,7 +14,7 @@ var value = {
 
 let InterfaceLogin = React.createClass({
   cerrar(){
-    localStorage.clear();
+    sessionStorage.clear();
   },
     render() {
 

@@ -95,6 +95,7 @@ var FormConfiguracion = React.createClass({
           <input type="text" ref="usuario" id="usuario" value={this.props.value.usuario} disabled required placeholder="Usuario" />
           <input type="password" ref="password" id="password" value={this.props.value.password} required placeholder="Contraseña" />
           <input type="submit" className="btn pull-right"
+                  id='cambiar_contrasena'
                   value="Cambiar Contraseña"
                   onClick={this.handleForm}>
          </input>
