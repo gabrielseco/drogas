@@ -1,0 +1,655 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   'react-pagify' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.1
+4 verbose install initial load of /Users/gabriel/drogas/package.json
+5 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/axios/package.json
+6 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/babel-core/package.json
+7 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/babel-eslint/package.json
+8 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/babel-loader/package.json
+9 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/babel-runtime/package.json
+10 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/css-loader/package.json
+11 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/eslint/package.json
+12 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/eslint-loader/package.json
+13 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/file-loader/package.json
+14 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/flummox/package.json
+15 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/grunt/package.json
+16 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/grunt-contrib-clean/package.json
+17 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/grunt-contrib-connect/package.json
+18 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/grunt-contrib-copy/package.json
+19 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/grunt-karma/package.json
+20 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/grunt-open/package.json
+21 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/grunt-webpack/package.json
+22 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/immutable/package.json
+23 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/karma/package.json
+24 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/karma-chrome-launcher/package.json
+25 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/karma-firefox-launcher/package.json
+26 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/karma-jasmine/package.json
+27 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/karma-phantomjs-launcher/package.json
+28 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/karma-script-launcher/package.json
+29 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/karma-webpack/package.json
+30 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/load-grunt-tasks/package.json
+31 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/localStorage/package.json
+32 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/lodash/package.json
+33 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/moment/package.json
+34 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/node-sass/package.json
+35 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/react/package.json
+36 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/react-autocomplete/package.json
+37 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/react-date-picker/package.json
+38 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/react-datepicker/package.json
+39 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/react-hot-loader/package.json
+40 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/react-router/package.json
+41 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/react-super-select/package.json
+42 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/reactabular/package.json
+43 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/sass-loader/package.json
+44 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/style-loader/package.json
+45 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/url-loader/package.json
+46 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/webpack/package.json
+47 verbose installManyTop reading scoped package data from /Users/gabriel/drogas/node_modules/webpack-dev-server/package.json
+48 info package.json babel-core@4.7.16 No license field.
+49 info package.json babel-runtime@4.7.16 No license field.
+50 info package.json css-loader@0.9.1 No license field.
+51 info package.json file-loader@0.8.1 No license field.
+52 info package.json grunt@0.4.5 No license field.
+53 info package.json grunt-contrib-clean@0.6.0 No license field.
+54 info package.json grunt-contrib-connect@0.8.0 No license field.
+55 info package.json grunt-contrib-copy@0.5.0 No license field.
+56 info package.json grunt-open@0.2.3 No license field.
+57 info package.json grunt-webpack@1.0.11 No license field.
+58 info package.json immutable@3.6.4 license should be a valid SPDX license expression
+59 info package.json karma-webpack@1.2.2 No license field.
+60 info package.json localStorage@1.0.3 license should be a valid SPDX license expression
+61 info package.json moment@2.10.3 No license field.
+62 info package.json react-autocomplete@0.0.2 No repository field.
+63 info package.json style-loader@0.8.3 No license field.
+64 info package.json webpack@1.4.15 No license field.
+65 info package.json webpack-dev-server@1.6.6 No license field.
+66 verbose readDependencies loading dependencies from /Users/gabriel/drogas/package.json
+67 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
+68 info shrinkwrap file "/Users/gabriel/drogas/npm-shrinkwrap.json"
+69 verbose readDependencies returned deps { axios: 'https://registry.npmjs.org/axios/-/axios-0.5.2.tgz',
+69 verbose readDependencies returned deps   'babel-runtime': 'https://registry.npmjs.org/babel-runtime/-/babel-runtime-4.7.16.tgz',
+69 verbose readDependencies returned deps   'file-loader': 'https://registry.npmjs.org/file-loader/-/file-loader-0.8.1.tgz',
+69 verbose readDependencies returned deps   flummox: 'https://registry.npmjs.org/flummox/-/flummox-2.13.2.tgz',
+69 verbose readDependencies returned deps   immutable: 'https://registry.npmjs.org/immutable/-/immutable-3.6.4.tgz',
+69 verbose readDependencies returned deps   react: 'https://registry.npmjs.org/react/-/react-0.12.2.tgz',
+69 verbose readDependencies returned deps   'react-router': 'https://registry.npmjs.org/react-router/-/react-router-0.11.6.tgz' }
+70 silly cache add args [ 'react-pagify', null ]
+71 verbose cache add spec react-pagify
+72 silly cache add parsed spec Result {
+72 silly cache add   raw: 'react-pagify',
+72 silly cache add   scope: null,
+72 silly cache add   name: 'react-pagify',
+72 silly cache add   rawSpec: '',
+72 silly cache add   spec: '*',
+72 silly cache add   type: 'range' }
+73 silly addNamed react-pagify@*
+74 verbose addNamed "*" is a valid semver range for react-pagify
+75 silly addNameRange { name: 'react-pagify', range: '*', hasData: false }
+76 silly mapToRegistry name react-pagify
+77 silly mapToRegistry using default registry
+78 silly mapToRegistry registry https://registry.npmjs.org/
+79 silly mapToRegistry uri https://registry.npmjs.org/react-pagify
+80 verbose addNameRange registry:https://registry.npmjs.org/react-pagify not in flight; fetching
+81 verbose request uri https://registry.npmjs.org/react-pagify
+82 verbose request no auth needed
+83 info attempt registry request try #1 at 19:04:34
+84 verbose request id 2700d2492b52aae5
+85 verbose etag "D41ROWJEPE4MGO6IVLS879NAQ"
+86 http request GET https://registry.npmjs.org/react-pagify
+87 http 200 https://registry.npmjs.org/react-pagify
+88 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+88 verbose headers   etag: '"DYH87A2DZEMKATCT9EY7PMXW0"',
+88 verbose headers   'content-type': 'application/json',
+88 verbose headers   'cache-control': 'max-age=60',
+88 verbose headers   'content-length': '49577',
+88 verbose headers   'accept-ranges': 'bytes',
+88 verbose headers   date: 'Sun, 25 Oct 2015 18:04:35 GMT',
+88 verbose headers   via: '1.1 varnish',
+88 verbose headers   age: '0',
+88 verbose headers   connection: 'keep-alive',
+88 verbose headers   'x-served-by': 'cache-fra1249-FRA',
+88 verbose headers   'x-cache': 'MISS',
+88 verbose headers   'x-cache-hits': '0',
+88 verbose headers   'x-timer': 'S1445796274.789506,VS0,VE776',
+88 verbose headers   vary: 'Accept' }
+89 silly get cb [ 200,
+89 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+89 silly get     etag: '"DYH87A2DZEMKATCT9EY7PMXW0"',
+89 silly get     'content-type': 'application/json',
+89 silly get     'cache-control': 'max-age=60',
+89 silly get     'content-length': '49577',
+89 silly get     'accept-ranges': 'bytes',
+89 silly get     date: 'Sun, 25 Oct 2015 18:04:35 GMT',
+89 silly get     via: '1.1 varnish',
+89 silly get     age: '0',
+89 silly get     connection: 'keep-alive',
+89 silly get     'x-served-by': 'cache-fra1249-FRA',
+89 silly get     'x-cache': 'MISS',
+89 silly get     'x-cache-hits': '0',
+89 silly get     'x-timer': 'S1445796274.789506,VS0,VE776',
+89 silly get     vary: 'Accept' } ]
+90 verbose get saving react-pagify to /Users/gabriel/.npm/registry.npmjs.org/react-pagify/.cache.json
+91 silly addNameRange number 2 { name: 'react-pagify', range: '*', hasData: true }
+92 silly addNameRange versions [ 'react-pagify',
+92 silly addNameRange   [ '0.1.1',
+92 silly addNameRange     '0.1.2',
+92 silly addNameRange     '0.2.0',
+92 silly addNameRange     '0.2.1',
+92 silly addNameRange     '0.3.1',
+92 silly addNameRange     '0.3.2',
+92 silly addNameRange     '0.3.3',
+92 silly addNameRange     '0.4.0',
+92 silly addNameRange     '0.5.0',
+92 silly addNameRange     '0.5.1',
+92 silly addNameRange     '0.6.0',
+92 silly addNameRange     '0.6.2',
+92 silly addNameRange     '0.6.3',
+92 silly addNameRange     '0.6.4',
+92 silly addNameRange     '0.6.5',
+92 silly addNameRange     '0.7.0',
+92 silly addNameRange     '0.7.1',
+92 silly addNameRange     '0.8.0',
+92 silly addNameRange     '0.8.1',
+92 silly addNameRange     '0.8.2',
+92 silly addNameRange     '0.9.0' ] ]
+93 silly addNamed react-pagify@0.9.0
+94 verbose addNamed "0.9.0" is a plain semver version for react-pagify
+95 silly mapToRegistry name react-pagify
+96 silly mapToRegistry using default registry
+97 silly mapToRegistry registry https://registry.npmjs.org/
+98 silly mapToRegistry uri https://registry.npmjs.org/react-pagify
+99 verbose addRemoteTarball https://registry.npmjs.org/react-pagify/-/react-pagify-0.9.0.tgz not in flight; adding
+100 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-pagify/-/react-pagify-0.9.0.tgz',
+100 verbose addRemoteTarball   '087c9451d841320d64d4c54ec42bd82db53a1268' ]
+101 info retry fetch attempt 1 at 19:04:36
+102 info attempt registry request try #1 at 19:04:36
+103 http fetch GET https://registry.npmjs.org/react-pagify/-/react-pagify-0.9.0.tgz
+104 http fetch 200 https://registry.npmjs.org/react-pagify/-/react-pagify-0.9.0.tgz
+105 silly fetchAndShaCheck shasum 087c9451d841320d64d4c54ec42bd82db53a1268
+106 verbose addTmpTarball /tmp/npm-1202-39a428ed/registry.npmjs.org/react-pagify/-/react-pagify-0.9.0.tgz not in flight; adding
+107 verbose addTmpTarball already have metadata; skipping unpack for react-pagify@0.9.0
+108 silly cache afterAdd react-pagify@0.9.0
+109 verbose afterAdd /Users/gabriel/.npm/react-pagify/0.9.0/package/package.json not in flight; writing
+110 verbose afterAdd /Users/gabriel/.npm/react-pagify/0.9.0/package/package.json written
+111 silly install resolved [ { name: 'react-pagify',
+111 silly install resolved     description: 'Simple pagination for React',
+111 silly install resolved     author: { name: 'Juho Vepsalainen', email: 'bebraw@gmail.com' },
+111 silly install resolved     version: '0.9.0',
+111 silly install resolved     scripts:
+111 silly install resolved      { start: 'node server.js',
+111 silly install resolved        test: 'jest && npm run lint',
+111 silly install resolved        'gh-pages': 'webpack --config ./config/webpack.gh-pages.js',
+111 silly install resolved        'deploy-gh-pages': 'node ./config/deploy-gh-pages.js',
+111 silly install resolved        'dist-all': 'npm run dist && npm run dist-min',
+111 silly install resolved        dist: 'webpack --config ./config/webpack.dist.js',
+111 silly install resolved        'dist-min': 'webpack --config ./config/webpack.dist.min.js',
+111 silly install resolved        'dist-modules': 'babel ./lib --out-dir ./dist-modules',
+111 silly install resolved        watch: 'npm-watch',
+111 silly install resolved        lint: 'eslint . --ext .js --ext .jsx',
+111 silly install resolved        preversion: 'npm run test && npm run dist-all && npm run dist-modules && git commit --allow-empty -am "Update dist"',
+111 silly install resolved        postpublish: 'npm run gh-pages && npm run deploy-gh-pages' },
+111 silly install resolved     main: 'dist-modules/index.js',
+111 silly install resolved     dependencies: { intersect: '^1.0.1', uniq: '^1.0.1' },
+111 silly install resolved     devDependencies:
+111 silly install resolved      { babel: '^5.8.23',
+111 silly install resolved        'babel-eslint': '^4.1.3',
+111 silly install resolved        'css-loader': '^0.19.0',
+111 silly install resolved        'cumberbatch-name': '^1.0.9',
+111 silly install resolved        eslint: '^1.5.1',
+111 silly install resolved        'eslint-plugin-react': '^3.4.2',
+111 silly install resolved        'file-loader': '^0.8.4',
+111 silly install resolved        'gh-pages': '^0.4.0',
+111 silly install resolved        'highlight.js': '^8.8.0',
+111 silly install resolved        'html-loader': '^0.3.0',
+111 silly install resolved        'html-webpack-plugin': '^1.6.1',
+111 silly install resolved        'jest-cli': '^0.5.8',
+111 silly install resolved        'json-loader': '^0.5.3',
+111 silly install resolved        'jsx-loader': '^0.13.2',
+111 silly install resolved        lodash: '^3.10.1',
+111 silly install resolved        marked: '^0.3.5',
+111 silly install resolved        'npm-watch': '^0.0.1',
+111 silly install resolved        'react-ghfork': '^0.3.2',
+111 silly install resolved        'react-hot-loader': '^1.3.0',
+111 silly install resolved        'react-tools': '^0.13.3',
+111 silly install resolved        'style-loader': '^0.12.4',
+111 silly install resolved        webpack: '^1.12.2',
+111 silly install resolved        'webpack-dev-server': '^1.11.0',
+111 silly install resolved        xtend: '^4.0.0' },
+111 silly install resolved     peerDependencies: { react: '>=0.13.* <1.0.0 || > 0.14.0-alpha' },
+111 silly install resolved     repository:
+111 silly install resolved      { type: 'git',
+111 silly install resolved        url: 'git+https://github.com/bebraw/react-pagify.git' },
+111 silly install resolved     homepage: 'https://bebraw.github.io/react-pagify/',
+111 silly install resolved     bugs: { url: 'https://github.com/bebraw/react-pagify/issues' },
+111 silly install resolved     keywords: [ 'react', 'reactjs', 'pagination' ],
+111 silly install resolved     licenses: [ [Object] ],
+111 silly install resolved     jest:
+111 silly install resolved      { scriptPreprocessor: './config/preprocessor.js',
+111 silly install resolved        unmockedModulePathPatterns: [Object] },
+111 silly install resolved     watch: { test: '{lib,__tests__}/*.js' },
+111 silly install resolved     gitHead: '3c8067f5b12dae5007e91d805d39076d20d09cb8',
+111 silly install resolved     _id: 'react-pagify@0.9.0',
+111 silly install resolved     _shasum: '087c9451d841320d64d4c54ec42bd82db53a1268',
+111 silly install resolved     _from: 'react-pagify@*',
+111 silly install resolved     _npmVersion: '2.14.6',
+111 silly install resolved     _nodeVersion: '4.1.2',
+111 silly install resolved     _npmUser: { name: 'bebraw', email: 'bebraw@gmail.com' },
+111 silly install resolved     maintainers: [ [Object] ],
+111 silly install resolved     dist:
+111 silly install resolved      { shasum: '087c9451d841320d64d4c54ec42bd82db53a1268',
+111 silly install resolved        tarball: 'http://registry.npmjs.org/react-pagify/-/react-pagify-0.9.0.tgz' },
+111 silly install resolved     directories: {},
+111 silly install resolved     _resolved: 'https://registry.npmjs.org/react-pagify/-/react-pagify-0.9.0.tgz' } ]
+112 info install react-pagify@0.9.0 into /Users/gabriel/drogas
+113 info installOne react-pagify@0.9.0
+114 verbose installOne of react-pagify to /Users/gabriel/drogas not in flight; installing
+115 verbose lock using /Users/gabriel/.npm/_locks/react-pagify-b061f582c24842f3.lock for /Users/gabriel/drogas/node_modules/react-pagify
+116 silly install write writing react-pagify 0.9.0 to /Users/gabriel/drogas/node_modules/react-pagify
+117 verbose unbuild node_modules/react-pagify
+118 silly gentlyRm /Users/gabriel/drogas/node_modules/react-pagify is being purged from base /Users/gabriel/drogas
+119 verbose gentlyRm don't care about contents; nuking /Users/gabriel/drogas/node_modules/react-pagify
+120 verbose tar unpack /Users/gabriel/.npm/react-pagify/0.9.0/package.tgz
+121 verbose tar unpacking to /Users/gabriel/drogas/node_modules/react-pagify
+122 silly gentlyRm /Users/gabriel/drogas/node_modules/react-pagify is being purged
+123 verbose gentlyRm don't care about contents; nuking /Users/gabriel/drogas/node_modules/react-pagify
+124 silly gunzTarPerm modes [ '755', '644' ]
+125 silly gunzTarPerm extractEntry package.json
+126 silly gunzTarPerm extractEntry .npmignore
+127 silly gunzTarPerm extractEntry README.md
+128 silly gunzTarPerm extractEntry LICENSE
+129 silly gunzTarPerm extractEntry server.js
+130 silly gunzTarPerm extractEntry dist/react-pagify.js
+131 silly gunzTarPerm extractEntry dist/react-pagify.min.js
+132 silly gunzTarPerm extractEntry .jshintrc
+133 silly gunzTarPerm extractEntry __tests__/np-test.js
+134 silly gunzTarPerm extractEntry __tests__/paginator-test.js
+135 silly gunzTarPerm extractEntry __tests__/segmentize-test.js
+136 silly gunzTarPerm extractEntry config/deploy-gh-pages.js
+137 silly gunzTarPerm extractEntry config/preprocessor.js
+138 silly gunzTarPerm extractEntry config/webpack.common.dist.js
+139 silly gunzTarPerm extractEntry config/webpack.common.js
+140 silly gunzTarPerm extractEntry config/webpack.config.js
+141 silly gunzTarPerm extractEntry config/webpack.dist.js
+142 silly gunzTarPerm extractEntry config/webpack.dist.min.js
+143 silly gunzTarPerm extractEntry config/webpack.gh-pages.js
+144 silly gunzTarPerm extractEntry demo/app.js
+145 silly gunzTarPerm extractEntry demo/index.js
+146 silly gunzTarPerm extractEntry demo/demo.css
+147 silly gunzTarPerm extractEntry .eslintrc
+148 silly gunzTarPerm extractEntry dist-modules/index.js
+149 silly gunzTarPerm extractEntry dist-modules/np.js
+150 silly gunzTarPerm extractEntry dist-modules/range.js
+151 silly gunzTarPerm extractEntry dist-modules/segmentize.js
+152 silly gunzTarPerm extractEntry index.html
+153 silly gunzTarPerm extractEntry lib/np.js
+154 silly gunzTarPerm extractEntry lib/range.js
+155 silly gunzTarPerm extractEntry lib/segmentize.js
+156 silly gunzTarPerm extractEntry lib/index.jsx
+157 silly gunzTarPerm extractEntry loaders/markdown.js
+158 silly gunzTarPerm extractEntry .travis.yml
+159 silly gunzTarPerm extractEntry .eslintignore
+160 silly gunzTarPerm extractEntry style.css
+161 verbose write writing to /Users/gabriel/drogas/node_modules/react-pagify/package.json
+162 info preinstall react-pagify@0.9.0
+163 verbose readDependencies loading dependencies from /Users/gabriel/drogas/node_modules/react-pagify/package.json
+164 silly prepareForInstallMany adding intersect@^1.0.1 from react-pagify dependencies
+165 silly prepareForInstallMany adding uniq@^1.0.1 from react-pagify dependencies
+166 silly prepareForInstallMany adding react@>=0.13.* <1.0.0 || > 0.14.0-alpha from react-pagify peerDependencies
+167 warn peerDependencies The peer dependency react@>=0.13.* <1.0.0 || > 0.14.0-alpha included from react-pagify will no
+168 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+169 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+170 verbose readDependencies loading dependencies from /Users/gabriel/drogas/node_modules/react-pagify/package.json
+171 silly cache add args [ 'intersect@^1.0.1', null ]
+172 verbose cache add spec intersect@^1.0.1
+173 silly cache add args [ 'uniq@^1.0.1', null ]
+174 verbose cache add spec uniq@^1.0.1
+175 silly cache add parsed spec Result {
+175 silly cache add   raw: 'intersect@^1.0.1',
+175 silly cache add   scope: null,
+175 silly cache add   name: 'intersect',
+175 silly cache add   rawSpec: '^1.0.1',
+175 silly cache add   spec: '>=1.0.1 <2.0.0',
+175 silly cache add   type: 'range' }
+176 silly addNamed intersect@>=1.0.1 <2.0.0
+177 verbose addNamed ">=1.0.1 <2.0.0" is a valid semver range for intersect
+178 silly addNameRange { name: 'intersect', range: '>=1.0.1 <2.0.0', hasData: false }
+179 silly mapToRegistry name intersect
+180 silly mapToRegistry using default registry
+181 silly mapToRegistry registry https://registry.npmjs.org/
+182 silly mapToRegistry uri https://registry.npmjs.org/intersect
+183 verbose addNameRange registry:https://registry.npmjs.org/intersect not in flight; fetching
+184 silly cache add parsed spec Result {
+184 silly cache add   raw: 'uniq@^1.0.1',
+184 silly cache add   scope: null,
+184 silly cache add   name: 'uniq',
+184 silly cache add   rawSpec: '^1.0.1',
+184 silly cache add   spec: '>=1.0.1 <2.0.0',
+184 silly cache add   type: 'range' }
+185 silly addNamed uniq@>=1.0.1 <2.0.0
+186 verbose addNamed ">=1.0.1 <2.0.0" is a valid semver range for uniq
+187 silly addNameRange { name: 'uniq', range: '>=1.0.1 <2.0.0', hasData: false }
+188 silly mapToRegistry name uniq
+189 silly mapToRegistry using default registry
+190 silly mapToRegistry registry https://registry.npmjs.org/
+191 silly mapToRegistry uri https://registry.npmjs.org/uniq
+192 verbose addNameRange registry:https://registry.npmjs.org/uniq not in flight; fetching
+193 verbose request uri https://registry.npmjs.org/intersect
+194 verbose request no auth needed
+195 info attempt registry request try #1 at 19:04:37
+196 verbose etag "8E0XRGVI1JYA2PYANRMWGBJWL"
+197 http request GET https://registry.npmjs.org/intersect
+198 verbose request uri https://registry.npmjs.org/uniq
+199 verbose request no auth needed
+200 info attempt registry request try #1 at 19:04:37
+201 verbose etag "B7WTMNNY319OJ7FGYUB0MZ4AF"
+202 http request GET https://registry.npmjs.org/uniq
+203 http 304 https://registry.npmjs.org/intersect
+204 verbose headers { date: 'Sun, 25 Oct 2015 18:04:36 GMT',
+204 verbose headers   via: '1.1 varnish',
+204 verbose headers   'cache-control': 'max-age=60',
+204 verbose headers   etag: '"8E0XRGVI1JYA2PYANRMWGBJWL"',
+204 verbose headers   age: '43',
+204 verbose headers   connection: 'keep-alive',
+204 verbose headers   'x-served-by': 'cache-fra1231-FRA',
+204 verbose headers   'x-cache': 'HIT',
+204 verbose headers   'x-cache-hits': '1',
+204 verbose headers   'x-timer': 'S1445796276.723566,VS0,VE0',
+204 verbose headers   vary: 'Accept' }
+205 silly get cb [ 304,
+205 silly get   { date: 'Sun, 25 Oct 2015 18:04:36 GMT',
+205 silly get     via: '1.1 varnish',
+205 silly get     'cache-control': 'max-age=60',
+205 silly get     etag: '"8E0XRGVI1JYA2PYANRMWGBJWL"',
+205 silly get     age: '43',
+205 silly get     connection: 'keep-alive',
+205 silly get     'x-served-by': 'cache-fra1231-FRA',
+205 silly get     'x-cache': 'HIT',
+205 silly get     'x-cache-hits': '1',
+205 silly get     'x-timer': 'S1445796276.723566,VS0,VE0',
+205 silly get     vary: 'Accept' } ]
+206 verbose etag https://registry.npmjs.org/intersect from cache
+207 verbose get saving intersect to /Users/gabriel/.npm/registry.npmjs.org/intersect/.cache.json
+208 silly addNameRange number 2 { name: 'intersect', range: '>=1.0.1 <2.0.0', hasData: true }
+209 silly addNameRange versions [ 'intersect',
+209 silly addNameRange   [ '0.0.0', '0.0.1', '0.0.2', '0.0.3', '0.1.0', '1.0.0', '1.0.1' ] ]
+210 silly addNamed intersect@1.0.1
+211 verbose addNamed "1.0.1" is a plain semver version for intersect
+212 silly cache afterAdd intersect@1.0.1
+213 verbose afterAdd /Users/gabriel/.npm/intersect/1.0.1/package/package.json not in flight; writing
+214 verbose afterAdd /Users/gabriel/.npm/intersect/1.0.1/package/package.json written
+215 http 304 https://registry.npmjs.org/uniq
+216 verbose headers { date: 'Sun, 25 Oct 2015 18:04:36 GMT',
+216 verbose headers   via: '1.1 varnish',
+216 verbose headers   'cache-control': 'max-age=60',
+216 verbose headers   etag: '"B7WTMNNY319OJ7FGYUB0MZ4AF"',
+216 verbose headers   age: '18',
+216 verbose headers   connection: 'keep-alive',
+216 verbose headers   'x-served-by': 'cache-fra1222-FRA',
+216 verbose headers   'x-cache': 'HIT',
+216 verbose headers   'x-cache-hits': '1',
+216 verbose headers   'x-timer': 'S1445796276.736292,VS0,VE0',
+216 verbose headers   vary: 'Accept' }
+217 silly get cb [ 304,
+217 silly get   { date: 'Sun, 25 Oct 2015 18:04:36 GMT',
+217 silly get     via: '1.1 varnish',
+217 silly get     'cache-control': 'max-age=60',
+217 silly get     etag: '"B7WTMNNY319OJ7FGYUB0MZ4AF"',
+217 silly get     age: '18',
+217 silly get     connection: 'keep-alive',
+217 silly get     'x-served-by': 'cache-fra1222-FRA',
+217 silly get     'x-cache': 'HIT',
+217 silly get     'x-cache-hits': '1',
+217 silly get     'x-timer': 'S1445796276.736292,VS0,VE0',
+217 silly get     vary: 'Accept' } ]
+218 verbose etag https://registry.npmjs.org/uniq from cache
+219 verbose get saving uniq to /Users/gabriel/.npm/registry.npmjs.org/uniq/.cache.json
+220 silly addNameRange number 2 { name: 'uniq', range: '>=1.0.1 <2.0.0', hasData: true }
+221 silly addNameRange versions [ 'uniq', [ '0.0.0', '0.0.2', '1.0.0', '1.0.1' ] ]
+222 silly addNamed uniq@1.0.1
+223 verbose addNamed "1.0.1" is a plain semver version for uniq
+224 silly cache afterAdd uniq@1.0.1
+225 verbose afterAdd /Users/gabriel/.npm/uniq/1.0.1/package/package.json not in flight; writing
+226 verbose afterAdd /Users/gabriel/.npm/uniq/1.0.1/package/package.json written
+227 silly install resolved [ { name: 'intersect',
+227 silly install resolved     description: 'Find the intersection of two arrays',
+227 silly install resolved     version: '1.0.1',
+227 silly install resolved     repository:
+227 silly install resolved      { type: 'git',
+227 silly install resolved        url: 'git://github.com/juliangruber/intersect.git' },
+227 silly install resolved     homepage: 'https://github.com/juliangruber/intersect',
+227 silly install resolved     main: 'index.js',
+227 silly install resolved     scripts: { test: 'tape test/*.js' },
+227 silly install resolved     dependencies: {},
+227 silly install resolved     devDependencies: { tape: '~2.3.0' },
+227 silly install resolved     keywords: [ 'intersect', 'array' ],
+227 silly install resolved     author:
+227 silly install resolved      { name: 'Julian Gruber',
+227 silly install resolved        email: 'mail@juliangruber.com',
+227 silly install resolved        url: 'http://juliangruber.com' },
+227 silly install resolved     license: 'MIT',
+227 silly install resolved     testling: { files: 'test/*.js', browsers: [Object] },
+227 silly install resolved     gitHead: '0a48f9fa15a8cba97a2e381984042a8f4c392d8a',
+227 silly install resolved     bugs: { url: 'https://github.com/juliangruber/intersect/issues' },
+227 silly install resolved     _id: 'intersect@1.0.1',
+227 silly install resolved     _shasum: '332650e10854d8c0ac58c192bdc27a8bf7e7a30c',
+227 silly install resolved     _from: 'intersect@>=1.0.1 <2.0.0',
+227 silly install resolved     _npmVersion: '2.6.1',
+227 silly install resolved     _nodeVersion: '0.10.36',
+227 silly install resolved     _npmUser: { name: 'juliangruber', email: 'julian@juliangruber.com' },
+227 silly install resolved     maintainers: [ [Object] ],
+227 silly install resolved     dist:
+227 silly install resolved      { shasum: '332650e10854d8c0ac58c192bdc27a8bf7e7a30c',
+227 silly install resolved        tarball: 'http://registry.npmjs.org/intersect/-/intersect-1.0.1.tgz' },
+227 silly install resolved     directories: {},
+227 silly install resolved     _resolved: 'https://registry.npmjs.org/intersect/-/intersect-1.0.1.tgz',
+227 silly install resolved     readme: 'ERROR: No README data found!' },
+227 silly install resolved   { name: 'uniq',
+227 silly install resolved     version: '1.0.1',
+227 silly install resolved     description: 'Removes duplicates from a sorted array in place',
+227 silly install resolved     main: 'uniq.js',
+227 silly install resolved     directories: { test: 'test' },
+227 silly install resolved     dependencies: {},
+227 silly install resolved     devDependencies: { tape: '^2.12.3' },
+227 silly install resolved     scripts: { test: 'tape test/*.js' },
+227 silly install resolved     repository: { type: 'git', url: 'git://github.com/mikolalysenko/uniq.git' },
+227 silly install resolved     keywords:
+227 silly install resolved      [ 'array',
+227 silly install resolved        'duplicate',
+227 silly install resolved        'unique',
+227 silly install resolved        'uniq',
+227 silly install resolved        'remove',
+227 silly install resolved        'sort',
+227 silly install resolved        'in',
+227 silly install resolved        'place',
+227 silly install resolved        'no',
+227 silly install resolved        'copy' ],
+227 silly install resolved     author: { name: 'Mikola Lysenko' },
+227 silly install resolved     license: 'MIT',
+227 silly install resolved     gitHead: 'e9828cfcb97e25a351f95b39fdf3c31876ff3985',
+227 silly install resolved     bugs: { url: 'https://github.com/mikolalysenko/uniq/issues' },
+227 silly install resolved     homepage: 'https://github.com/mikolalysenko/uniq',
+227 silly install resolved     _id: 'uniq@1.0.1',
+227 silly install resolved     dist:
+227 silly install resolved      { shasum: 'b31c5ae8254844a3a8281541ce2b04b865a734ff',
+227 silly install resolved        tarball: 'http://registry.npmjs.org/uniq/-/uniq-1.0.1.tgz' },
+227 silly install resolved     _from: 'uniq@>=1.0.1 <2.0.0',
+227 silly install resolved     _npmVersion: '1.4.3',
+227 silly install resolved     _npmUser: { name: 'mikolalysenko', email: 'mikolalysenko@gmail.com' },
+227 silly install resolved     maintainers: [ [Object] ],
+227 silly install resolved     _shasum: 'b31c5ae8254844a3a8281541ce2b04b865a734ff',
+227 silly install resolved     _resolved: 'https://registry.npmjs.org/uniq/-/uniq-1.0.1.tgz',
+227 silly install resolved     readme: 'ERROR: No README data found!' } ]
+228 info install intersect@1.0.1 into /Users/gabriel/drogas/node_modules/react-pagify
+229 info install uniq@1.0.1 into /Users/gabriel/drogas/node_modules/react-pagify
+230 info installOne intersect@1.0.1
+231 verbose installOne of intersect to /Users/gabriel/drogas/node_modules/react-pagify not in flight; installing
+232 info installOne uniq@1.0.1
+233 verbose installOne of uniq to /Users/gabriel/drogas/node_modules/react-pagify not in flight; installing
+234 verbose lock using /Users/gabriel/.npm/_locks/intersect-a8c033b3129c30cb.lock for /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+235 silly install write writing intersect 1.0.1 to /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+236 verbose lock using /Users/gabriel/.npm/_locks/uniq-420cc8a7959dc4f3.lock for /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+237 silly install write writing uniq 1.0.1 to /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+238 verbose unbuild node_modules/react-pagify/node_modules/intersect
+239 verbose unbuild node_modules/react-pagify/node_modules/uniq
+240 silly gentlyRm /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect is being purged from base /Users/gabriel/drogas
+241 verbose gentlyRm don't care about contents; nuking /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+242 verbose tar unpack /Users/gabriel/.npm/intersect/1.0.1/package.tgz
+243 verbose tar unpacking to /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+244 silly gentlyRm /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect is being purged
+245 verbose gentlyRm don't care about contents; nuking /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+246 silly gentlyRm /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq is being purged from base /Users/gabriel/drogas
+247 verbose gentlyRm don't care about contents; nuking /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+248 silly gunzTarPerm modes [ '755', '644' ]
+249 verbose tar unpack /Users/gabriel/.npm/uniq/1.0.1/package.tgz
+250 verbose tar unpacking to /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+251 silly gentlyRm /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq is being purged
+252 verbose gentlyRm don't care about contents; nuking /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+253 silly gunzTarPerm modes [ '755', '644' ]
+254 silly gunzTarPerm extractEntry package.json
+255 silly gunzTarPerm extractEntry package.json
+256 silly gunzTarPerm extractEntry .npmignore
+257 silly gunzTarPerm extractEntry README.md
+258 silly gunzTarPerm extractEntry .npmignore
+259 silly gunzTarPerm extractEntry README.md
+260 silly gunzTarPerm extractEntry bench.js
+261 silly gunzTarPerm extractEntry index.js
+262 silly gunzTarPerm extractEntry LICENSE
+263 silly gunzTarPerm extractEntry uniq.js
+264 silly gunzTarPerm extractEntry test/test.js
+265 silly gunzTarPerm extractEntry .travis.yml
+266 silly gunzTarPerm extractEntry component.json
+267 silly gunzTarPerm extractEntry Makefile
+268 silly gunzTarPerm extractEntry test/test.js
+269 verbose write writing to /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq/package.json
+270 info preinstall uniq@1.0.1
+271 verbose readDependencies loading dependencies from /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq/package.json
+272 verbose readDependencies loading dependencies from /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq/package.json
+273 silly install resolved []
+274 verbose about to build /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+275 info build /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+276 info linkStuff uniq@1.0.1
+277 silly linkStuff uniq@1.0.1 has /Users/gabriel/drogas/node_modules/react-pagify/node_modules as its parent node_modules
+278 verbose write writing to /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect/package.json
+279 verbose linkBins uniq@1.0.1
+280 verbose linkMans uniq@1.0.1
+281 verbose rebuildBundles uniq@1.0.1
+282 info install uniq@1.0.1
+283 info preinstall intersect@1.0.1
+284 info postinstall uniq@1.0.1
+285 verbose readDependencies loading dependencies from /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect/package.json
+286 verbose unlock done using /Users/gabriel/.npm/_locks/uniq-420cc8a7959dc4f3.lock for /Users/gabriel/drogas/node_modules/react-pagify/node_modules/uniq
+287 verbose readDependencies loading dependencies from /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect/package.json
+288 silly install resolved []
+289 verbose about to build /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+290 info build /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+291 info linkStuff intersect@1.0.1
+292 silly linkStuff intersect@1.0.1 has /Users/gabriel/drogas/node_modules/react-pagify/node_modules as its parent node_modules
+293 verbose linkBins intersect@1.0.1
+294 verbose linkMans intersect@1.0.1
+295 verbose rebuildBundles intersect@1.0.1
+296 info install intersect@1.0.1
+297 info postinstall intersect@1.0.1
+298 verbose unlock done using /Users/gabriel/.npm/_locks/intersect-a8c033b3129c30cb.lock for /Users/gabriel/drogas/node_modules/react-pagify/node_modules/intersect
+299 verbose about to build /Users/gabriel/drogas/node_modules/react-pagify
+300 info build /Users/gabriel/drogas/node_modules/react-pagify
+301 info linkStuff react-pagify@0.9.0
+302 silly linkStuff react-pagify@0.9.0 has /Users/gabriel/drogas/node_modules as its parent node_modules
+303 verbose linkBins react-pagify@0.9.0
+304 verbose linkMans react-pagify@0.9.0
+305 verbose rebuildBundles react-pagify@0.9.0
+306 verbose rebuildBundles [ 'intersect', 'uniq' ]
+307 info install react-pagify@0.9.0
+308 info postinstall react-pagify@0.9.0
+309 verbose readDependencies loading dependencies from /Users/gabriel/drogas/package.json
+310 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
+311 info shrinkwrap file "/Users/gabriel/drogas/npm-shrinkwrap.json"
+312 verbose readDependencies returned deps { axios: 'https://registry.npmjs.org/axios/-/axios-0.5.2.tgz',
+312 verbose readDependencies returned deps   'babel-runtime': 'https://registry.npmjs.org/babel-runtime/-/babel-runtime-4.7.16.tgz',
+312 verbose readDependencies returned deps   'file-loader': 'https://registry.npmjs.org/file-loader/-/file-loader-0.8.1.tgz',
+312 verbose readDependencies returned deps   flummox: 'https://registry.npmjs.org/flummox/-/flummox-2.13.2.tgz',
+312 verbose readDependencies returned deps   immutable: 'https://registry.npmjs.org/immutable/-/immutable-3.6.4.tgz',
+312 verbose readDependencies returned deps   react: 'https://registry.npmjs.org/react/-/react-0.12.2.tgz',
+312 verbose readDependencies returned deps   'react-router': 'https://registry.npmjs.org/react-router/-/react-router-0.11.6.tgz' }
+313 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/axios/package.json
+314 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/babel-core/package.json
+315 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/babel-eslint/package.json
+316 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/babel-loader/package.json
+317 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/babel-runtime/package.json
+318 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/css-loader/package.json
+319 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/eslint/package.json
+320 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/eslint-loader/package.json
+321 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/file-loader/package.json
+322 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/flummox/package.json
+323 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/grunt/package.json
+324 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/grunt-contrib-clean/package.json
+325 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/grunt-contrib-connect/package.json
+326 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/grunt-contrib-copy/package.json
+327 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/grunt-karma/package.json
+328 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/grunt-open/package.json
+329 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/grunt-webpack/package.json
+330 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/immutable/package.json
+331 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/karma/package.json
+332 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/karma-chrome-launcher/package.json
+333 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/karma-firefox-launcher/package.json
+334 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/karma-jasmine/package.json
+335 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/karma-phantomjs-launcher/package.json
+336 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/karma-script-launcher/package.json
+337 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/karma-webpack/package.json
+338 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/load-grunt-tasks/package.json
+339 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/localStorage/package.json
+340 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/lodash/package.json
+341 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/moment/package.json
+342 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/node-sass/package.json
+343 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react/package.json
+344 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react-autocomplete/package.json
+345 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react-date-picker/package.json
+346 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react-datepicker/package.json
+347 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react-hot-loader/package.json
+348 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react-pagify/package.json
+349 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react-router/package.json
+350 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/react-super-select/package.json
+351 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/reactabular/package.json
+352 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/sass-loader/package.json
+353 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/style-loader/package.json
+354 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/url-loader/package.json
+355 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/webpack/package.json
+356 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/webpack-dev-server/package.json
+357 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/.bin/eslint/package.json
+358 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/.bin/grunt-open/package.json
+359 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/.bin/karma/package.json
+360 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/.bin/node-sass/package.json
+361 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/.bin/webpack/package.json
+362 verbose targetResolver reading package data from /Users/gabriel/drogas/node_modules/.bin/webpack-dev-server/package.json
+363 verbose already installed skipping react@>=0.13.* <1.0.0 || > 0.14.0-alpha /Users/gabriel/drogas
+364 silly install resolved []
+365 verbose unlock done using /Users/gabriel/.npm/_locks/react-pagify-b061f582c24842f3.lock for /Users/gabriel/drogas/node_modules/react-pagify
+366 verbose validateInstall loading /Users/gabriel/drogas/package.json for validation
+367 verbose stack Error: The package react@0.12.2 does not satisfy its siblings' peerDependencies requirements!
+367 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+367 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+367 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+367 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+367 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+367 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+367 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+367 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+367 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+367 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+368 verbose cwd /Users/gabriel/drogas
+369 error Darwin 15.0.0
+370 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "i" "react-pagify"
+371 error node v4.2.1
+372 error npm  v2.14.7
+373 error code EPEERINVALID
+374 error peerinvalid The package react@0.12.2 does not satisfy its siblings' peerDependencies requirements!
+374 error peerinvalid Peer react-datepicker@0.10.0 wants react@>=0.12 <0.14
+374 error peerinvalid Peer react-pagify@0.9.0 wants react@>=0.13.* <1.0.0 || > 0.14.0-alpha
+374 error peerinvalid Peer react-router@0.11.6 wants react@0.12.x
+374 error peerinvalid Peer reactabular@0.8.4 wants react@>= 0.11.2 < 1.0.0
+374 error peerinvalid Peer react-date-picker@3.1.6 wants react@>=0.12.0 || ^0.14.0-alpha
+374 error peerinvalid Peer react-super-select@0.1.15 wants react@>=0.12.0
+375 verbose exit [ 1, true ]

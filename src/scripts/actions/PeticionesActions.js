@@ -158,9 +158,20 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
   var TOKEN = sessionStorage.getItem('TOKEN');
   var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
 
-  var url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&ID_PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI"+params.fechaInicio+"&FECHAF="+params.fechaFinal;
 
-  var velneo = await(apiendpoint + params);
+  var fechaInicio = params.fechaInicio.split("/");
+
+  fechaInicio = fechaInicio[1] + "/" + fechaInicio[0] + "/"+ fechaInicio[2];
+
+  var fechaFinal = params.fechaFinal.split("/");
+
+  fechaFinal = fechaFinal[1] + "/" + fechaFinal[0] + "/"+ fechaFinal[2];
+
+  console.log(params.fechaInicio);
+
+  var url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+fechaInicio+"&FECHAF="+fechaFinal;
+
+  var velneo = await axios.get(apiendpoint + url);
 
   return velneo.data;
 

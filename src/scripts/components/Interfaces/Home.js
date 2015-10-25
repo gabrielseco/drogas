@@ -5,7 +5,6 @@ import moment from 'moment';
 import BreadCrumb from '../UI/BreadCrumb';
 import BuscadorFechas from '../UI/BuscadorFechas';
 import Footer from '../UI/Footer';
-import Table from '../UI/Table';
 import { Link } from 'react-router';
 
 
@@ -35,8 +34,6 @@ let InterfaceHome = React.createClass({
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
               <BuscadorFechas flux={this.props.flux}/>
-                <Link to="altaPeticion" className="btn btn-default pull-right">Alta</Link>
-              <Table/>
               <Footer/>
             </div>
         );
