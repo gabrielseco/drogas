@@ -52,11 +52,10 @@ var FormPeticiones = React.createClass({
         console.log('res alta peticion', res);
         if(res[0].Resultado === 200){
           console.log('Petición enviada');
-          document.getElementById('mensaje_exito').className = 'alert-info';
+          this.transitionTo('home');
         }
         else if(res[0].Resultado === 500){
           console.log('error al enviar el contacto');
-          document.getElementById('mensaje_error').className = 'alert-warning';
           this.iterateErrors(data);
         }
         else {

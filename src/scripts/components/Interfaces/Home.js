@@ -5,12 +5,14 @@ import moment from 'moment';
 import BreadCrumb from '../UI/BreadCrumb';
 import BuscadorFechas from '../UI/BuscadorFechas';
 import Footer from '../UI/Footer';
+import Loading from '../UI/Loading';
+
 import { Link } from 'react-router';
 
 
 var texto = "";
 var centro = "";
-var fechaInicial = moment().subtract(1, 'week');
+var fechaInicial = moment().format('MM/DD/YYYY');;
 var fechaFinal = '';
 
 let InterfaceHome = React.createClass({
@@ -28,15 +30,19 @@ let InterfaceHome = React.createClass({
       });
     },
     render() {
-
-
+      if(this.state.centro === ''){
+        return (<Loading/>);
+      } else  {
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
-              <BuscadorFechas flux={this.props.flux}/>
+              <BuscadorFechas flux={this.props.flux} fechaInicial={fechaInicial}/>
               <Footer/>
             </div>
         );
+      }
+
+
     }
 });
 

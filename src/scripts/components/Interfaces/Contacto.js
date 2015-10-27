@@ -4,6 +4,8 @@ import React from 'react/addons';
 import BreadCrumb from '../UI/BreadCrumb';
 import FormContacto from '../Login/FormContacto';
 import Footer from '../UI/Footer';
+import Loading from '../UI/Loading';
+
 
 var value = {
   nombre: null,
@@ -30,6 +32,9 @@ let InterfaceContacto = React.createClass({
       });
     },
     render() {
+      if(this.state.centro === ''){
+        return (<Loading />);
+      } else {
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Contacto"/>
@@ -37,6 +42,7 @@ let InterfaceContacto = React.createClass({
               <Footer/>
             </div>
         );
+      }
     }
 });
 

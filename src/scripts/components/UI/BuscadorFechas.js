@@ -12,6 +12,12 @@ let BuscadorFechas = React.createClass({
         data: ''
       };
     },
+    componentWillMount(){
+      this.props.flux.getActions('peticiones').peticionesFrom(this.props.fechaInicial).then((res)=> {
+        console.log('data for table', res);
+        this.setState({data: res});
+      });
+    },
     handle(){
       console.log('handle');
 
@@ -48,7 +54,7 @@ let BuscadorFechas = React.createClass({
           <button type="button" className="btn btn-default" onClick={this.handle}>Enviar Peticiones</button>
           </form>
           </div>
-          <UITable data={this.state.data} />
+          <UITable data={this.state.data} flux={this.props.flux} />
           </div>
         );
     }

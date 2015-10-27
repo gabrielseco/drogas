@@ -3,6 +3,7 @@
 import React from 'react/addons';
 import BreadCrumb from '../UI/BreadCrumb';
 import Footer from '../UI/Footer';
+import Loading from '../UI/Loading';
 import FormPeticiones from '../Peticiones/FormPeticiones';
 import FormModificarPeticiones from '../Peticiones/FormModificarPeticiones';
 import { State, Navigation, TransitionHook } from 'react-router';
@@ -59,7 +60,7 @@ let ModificarPeticion = React.createClass({
     },
     render() {
         if(this.state.pacientes === '' || this.state.medicos === '' || this.state.analiticas === ''){
-          return (<div></div>);
+          return (<Loading/>);
         } else if (this.state.form !== '' ){
           return (
             <div>

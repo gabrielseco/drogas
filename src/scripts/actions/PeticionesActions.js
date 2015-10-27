@@ -157,21 +157,43 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
   var ID = sessionStorage.getItem('ID');
   var TOKEN = sessionStorage.getItem('TOKEN');
   var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
+  var url = "";
 
+  console.log('params automatic',typeof params);
 
-  var fechaInicio = params.fechaInicio.split("/");
+  if(typeof params === 'string' ){
+    url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+params;
 
-  fechaInicio = fechaInicio[1] + "/" + fechaInicio[0] + "/"+ fechaInicio[2];
+  } else {
+    var fechaInicio = params.fechaInicio.split("/");
 
-  var fechaFinal = params.fechaFinal.split("/");
+    fechaInicio = fechaInicio[1] + "/" + fechaInicio[0] + "/"+ fechaInicio[2];
 
-  fechaFinal = fechaFinal[1] + "/" + fechaFinal[0] + "/"+ fechaFinal[2];
+    var fechaFinal = params.fechaFinal.split("/");
 
-  console.log(params.fechaInicio);
+    fechaFinal = fechaFinal[1] + "/" + fechaFinal[0] + "/"+ fechaFinal[2];
 
-  var url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+fechaInicio+"&FECHAF="+fechaFinal;
+    console.log(params.fechaInicio);
+    url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+fechaInicio+"&FECHAF="+fechaFinal;
+
+  }
 
   var velneo = await axios.get(apiendpoint + url);
+
+  console.log('velneo data', velneo.data);
+
+  for(var i = 0; i < velneo.data.length; i++){
+    velneo.data[i].PRUEBAS_PENDIENTES = parseInt(velneo.data[i].PRUEBAS_PENDIENTES);
+    var fecha = velneo.data[i].Fecha.split("/");
+    velneo.data[i].Fecha = fecha[1] + "/" + fecha[0] + "/"+ fecha[2];
+    if(velneo.data[i].Nombre == ''){
+      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Apellidos;
+    } else if( velneo.data[i].Apellidos === ''){
+      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre;
+    } else {
+      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre + ", " + velneo.data[i].Apellidos ;
+    }
+  }
 
   return velneo.data;
 

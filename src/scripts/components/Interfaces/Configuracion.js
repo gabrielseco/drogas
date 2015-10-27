@@ -3,6 +3,7 @@
 import React from 'react/addons';
 import BreadCrumb from '../UI/BreadCrumb';
 import Footer from '../UI/Footer';
+import Loading from '../UI/Loading';
 import FormConfiguracion from '../Login/FormConfiguracion';
 
 var value = {
@@ -33,6 +34,9 @@ let InterfaceConfiguracion = React.createClass({
       });
     },
     render() {
+      if(this.state.centro === ''){
+        return (<Loading/>);
+      } else {
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Configuracion &gt; Cambiar contraseña"/>
@@ -40,6 +44,7 @@ let InterfaceConfiguracion = React.createClass({
               <Footer/>
             </div>
         );
+      }
     }
 });
 

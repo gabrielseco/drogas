@@ -11,6 +11,7 @@ require('reactabular/style.css');
 
 
 let UITable = React.createClass({
+  mixins: [ Navigation, TransitionHook, State ],
     getInitialState(){
       var columns = [
       {
@@ -19,25 +20,24 @@ let UITable = React.createClass({
       },
       {
           property: 'ID_PETICION',
-          header: 'ID DE LA PETICIÓN'
+          header: 'ID PETICIÓN'
       }, {
-          property: 'Paciente',
+          property: 'NOMBRE_COMPLETO',
           header: 'PACIENTE'
       }, {
           property: 'Medico',
           header: 'DOCTOR'
       },{
           property: 'PRUEBAS_PENDIENTES',
-          header: 'PRUEBAS PENDIENTES'
+          header: 'PRUEBAS PEND'
       },
       {
         property: 'editar',
         header: 'Editar',
         cell: (value, data, rowIndex, property) => {
            var editar = () => {
-             var id = data[rowIndex].ID;
-             //var idPelicula = this.getParams().id;
-             //this.transitionTo('/editWords/:id/:idPelicula/:idEpisodio',{id: id, idPelicula: idPelicula, idEpisodio: 0});
+             var id = data[rowIndex].ID_PETICION;
+             this.transitionTo('/modificarpeticion/:id',{id: id});
             };
 
            return {
@@ -53,6 +53,18 @@ let UITable = React.createClass({
          cell: (value, data, rowIndex, property) => {
             var eliminar = () => {
               var id = data[rowIndex].ID;
+              var pruebas = +data[rowIndex].PRUEBAS_PENDIENTES;
+
+              if(pruebas > 0) {
+
+                alert('tiene pruebas pendientes');
+
+
+              } else {
+
+                alert('No se pueder eliminar, no hay pruebas pendientes');
+
+              }
               //var english = data[rowIndex].english;
 
               //var del = confirm('Quieres eliminar la palabra '+english+ ' ?');
@@ -126,11 +138,11 @@ onPerPage(e) {
       pagination: pagination
   });
 },
-    render() {
+render() {
         if(this.props.data === ''){
           return (
               <div>
-                <p>No hay datos para mostrar. Intente hacer una búsqueda</p>
+                <p className='text-center'>No hay datos para mostrar. Hoy no has hecho ninguna petición</p>
               </div>
           );
         } else {
@@ -162,7 +174,6 @@ onPerPage(e) {
 
           return (
             <div className="table-react">
-            <Link to="altaPeticion" className="btn btn-default pull-right">Alta</Link>
 
             <div className='per-page-container'>
                 Resultados <input type='text' defaultValue={pagination.perPage} onChange={this.onPerPage}></input>
@@ -179,6 +190,9 @@ onPerPage(e) {
                     endPages={3}
                     onSelect={this.onSelect}>
                </Paginator>
+            </div>
+            <div className='pull-left'>
+            <Link to="altaPeticion" className="btn btn-default pull-right">Alta Petición</Link>
             </div>
         </div>
           )
