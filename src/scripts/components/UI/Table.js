@@ -47,45 +47,6 @@ let UITable = React.createClass({
            };
          }
        },
-       {
-         property: 'eliminar',
-         header: 'Eliminar',
-         cell: (value, data, rowIndex, property) => {
-            var eliminar = () => {
-              var id = data[rowIndex].ID;
-              var pruebas = +data[rowIndex].PRUEBAS_PENDIENTES;
-
-              if(pruebas > 0) {
-
-                alert('tiene pruebas pendientes');
-
-
-              } else {
-
-                alert('No se pueder eliminar, no hay pruebas pendientes');
-
-              }
-              //var english = data[rowIndex].english;
-
-              //var del = confirm('Quieres eliminar la palabra '+english+ ' ?');
-
-              /*if(del){
-                this.props.flux.getActions('diccionarios').deleteWords(id).then(function(res){
-                  //console.log('res delete', res);
-                  if(res[0].Resultado === 200){
-                    location.reload();
-                  }
-                });
-              }*/
-            };
-
-            return {
-                value: <span>
-                    <a onClick={eliminar} className="delete-btn">Eliminar</a>
-                </span>
-            };
-          }
-        }
 
     ];
     return {
@@ -147,7 +108,7 @@ render() {
           );
         } else {
           var dataPagination = this.props.data;
-          console.log('data',dataPagination);
+          //console.log('data',dataPagination);
           var pagination = this.state.pagination;
           var header = this.state.header;
 
@@ -167,7 +128,7 @@ render() {
         dataPagination = sortColumn.sort(dataPagination, this.state.sortingColumn);
         var paginated = Paginator.paginate(dataPagination, pagination);
 
-        console.log(paginated);
+        //console.log(paginated);
 
 
 

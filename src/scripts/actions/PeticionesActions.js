@@ -102,9 +102,9 @@ let serverSendPeticion = async function (apiendpoint, data) {
   var analitica = null;
   var velneo = null;
   var url = "alta_peticion?id="+ID+"&procedencia="+ID_PROCEDENCIA+"&token="+TOKEN+"&pacientes="+paciente+"&medicos="+medico+"&identificacion="+identificacion;
-  console.log('alta petición', apiendpoint + url);
+  //console.log('alta petición', apiendpoint + url);
   velneo = await axios.get(apiendpoint + url);
-  console.log('velneo res send'+JSON.stringify(velneo.data));
+  //console.log('velneo res send'+JSON.stringify(velneo.data));
 
   var ID_PETICION = velneo.data[0].ID_PETICION;
 
@@ -112,7 +112,7 @@ let serverSendPeticion = async function (apiendpoint, data) {
 
   for(var i = 0; i < data.analiticas.length; i++){
     url = "alta_analiticas?id="+ID+"&procedencia="+ID_PROCEDENCIA+"&token="+TOKEN+"&analiticas="+data.analiticas[i].id+"&ID_PETICION="+ID_PETICION;
-    console.log('analiticas url', url);
+    //console.log('analiticas url', url);
     velneo = await axios.get(apiendpoint + url);
   }
 
@@ -122,32 +122,37 @@ let serverSendPeticion = async function (apiendpoint, data) {
 
 };
 
-let serverFetchPeticion = async function(apiendpoint, params){
+let serverFetchPeticion = async function(apiendpoint, params, medicos, pacientes){
   var ID = sessionStorage.getItem('ID');
   var TOKEN = sessionStorage.getItem('TOKEN');
   var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
-  var analiticas = new Array();
 
   var url = "peticion?ID="+params+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&USER_ID="+ID;
 
-  var velneo_1 = await axios.get(apiendpoint + url);
+  var velneo = await axios.get(apiendpoint + url);
 
-  url = "peticion_analiticas?ID="+params+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&USER_ID="+ID;
+  //console.log('medicos', medicos);
+  //console.log('pacientes', pacientes);
 
+  //console.log('datos de la peticion',velneo.data);
 
-  var velneo_2 = await axios.get(apiendpoint + url);
-
-  for(var i = 0;i < velneo_2.data.length;i++) {
-    analiticas.push(velneo_2.data[i].Analitica);
+  for(var i = 0; i < medicos.length; i++){
+    if(medicos[i].id === velneo.data[0].Medico) {
+      velneo.data[0].Medico = medicos[i];
+    }
   }
 
-  console.log('analiticas',analiticas);
+  for(var i = 0; i < pacientes.length; i++){
+    if(pacientes[i].id === velneo.data[0].Paciente) {
+      velneo.data[0].Paciente = pacientes[i];
+    }
+  }
 
-  velneo_1.data.analiticas = analiticas
+  //console.log('datos de la peticion for',velneo.data);
 
-  console.log('velneo_1',velneo_1.data);
+  return velneo.data;
 
-  return velneo_1.data;
+
 
 
 };
@@ -159,7 +164,7 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
   var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
   var url = "";
 
-  console.log('params automatic',typeof params);
+  //console.log('params automatic',typeof params);
 
   if(typeof params === 'string' ){
     url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+params;
@@ -173,14 +178,14 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
 
     fechaFinal = fechaFinal[1] + "/" + fechaFinal[0] + "/"+ fechaFinal[2];
 
-    console.log(params.fechaInicio);
+    //console.log(params.fechaInicio);
     url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+fechaInicio+"&FECHAF="+fechaFinal;
 
   }
 
   var velneo = await axios.get(apiendpoint + url);
 
-  console.log('velneo data', velneo.data);
+  //console.log('velneo data', velneo.data);
 
   for(var i = 0; i < velneo.data.length; i++){
     velneo.data[i].PRUEBAS_PENDIENTES = parseInt(velneo.data[i].PRUEBAS_PENDIENTES);
@@ -198,6 +203,7 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
   return velneo.data;
 
 };
+
 
 
 export class PeticionesActions extends Actions {
@@ -237,12 +243,13 @@ export class PeticionesActions extends Actions {
       return response;
     }
 
-    async fetchPeticion(params){
+    async fetchPeticion(params, pacientes, medicos){
 
-      const response = await serverFetchPeticion(this.apiendpoint, params);
+      const response = await serverFetchPeticion(this.apiendpoint, params, pacientes, medicos);
 
       return response;
 
     }
+
 
 }

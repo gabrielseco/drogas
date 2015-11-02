@@ -30,8 +30,17 @@ var FormModificarPeticiones = React.createClass({
         fecha: '',
         medicos: '',
         pacientes: '',
-        analiticas: ''
+        form: ''
       };
+    },
+    componentWillMount(){
+      var id = this.getParams().id;
+      this.props.flux.getActions('peticiones').fetchPeticion(id, this.props.medicos, this.props.pacientes).then((res)=> {
+
+        this.setState({
+          form: res
+        });
+      });
     },
     handleForm(e){
 
@@ -42,21 +51,18 @@ var FormModificarPeticiones = React.createClass({
         identificacion: this.refs.identificacion.getDOMNode().value,
         pacientes: this.state.pacientes,
         medicos: this.state.medicos,
-        analiticas: this.state.analiticas
       };
 
 
       console.log(JSON.stringify(data));
 
-      this.props.flux.getActions('peticiones').sendPeticion(data).then((res)=> {
-        console.log('res alta peticion', res);
+      this.props.flux.getActions('peticiones').modificarPeticion(data).then((res)=> {
+        console.log('res modificar peticion', res);
         if(res[0].Resultado === 200){
-          console.log('Petición enviada');
-          document.getElementById('mensaje_exito').className = 'alert-info';
+          console.log('Petición modificar');
         }
         else if(res[0].Resultado === 500){
-          console.log('error al enviar el contacto');
-          document.getElementById('mensaje_error').className = 'alert-warning';
+          console.log('error al modificar');
           this.iterateErrors(data);
         }
         else {
@@ -97,15 +103,10 @@ var FormModificarPeticiones = React.createClass({
         pacientes: option
       });
     },
-    handlerAnaliticas(option){
-      this.setState({
-        analiticas: option
-      });
-    },
     render(){
+      if(this.state.form !== ''){
 
-
-    return (
+      return (
       <div className="container">
         <div className="row">
           <form className="form-horizontal" onSubmit={this.handleForm} id="addPeticiones" method="post" role="form">
@@ -113,14 +114,15 @@ var FormModificarPeticiones = React.createClass({
             <div className="form-group">
               <label className="control-label col-md-2">Identificación</label>
               <div className="col-md-4">
-                <input type="text" ref="identificacion" defaultValue={this.props.form[0].Identificacion}/>
+                <input type="text" ref="identificacion" defaultValue={this.state.form[0].Identificacion} />
               </div>
               <label className="control-label col-md-2">Médico</label>
               <div className="col-md-4">
                 <ReactSuperSelect ref="medicos" placeholder="Seleccione una opción"
                                   dataSource={this.props.medicos}
                                   onChange={this.handlerMedicos}
-                                  searchable={true}/>
+                                  searchable={true}
+                                  initialValue={this.state.form[0].Medico}/>
               </div>
             </div>
             <div className="form-group">
@@ -129,15 +131,8 @@ var FormModificarPeticiones = React.createClass({
               <ReactSuperSelect ref="pacientes" placeholder="Seleccione una opción"
                                 dataSource={this.props.pacientes}
                                 onChange={this.handlerPacientes}
-                                searchable={true}/>
-              </div>
-              <label className="control-label col-md-2">Drogas</label>
-              <div className="col-md-4">
-              <ReactSuperSelect ref="analiticas" placeholder="Seleccione una opción"
-                                dataSource={this.props.analiticas}
-                                onChange={this.handlerAnaliticas}
                                 searchable={true}
-                                tags={true}/>
+                                initialValue={this.state.form[0].Paciente}/>
               </div>
               </div>
               <br/><br/>
@@ -149,6 +144,9 @@ var FormModificarPeticiones = React.createClass({
         <br/>
       </div>
     );
+  } else {
+    return (<div></div>);
+  }
   }
   });
 
