@@ -16,8 +16,6 @@ import ModificarPeticion from './Interfaces/ModificarPeticion';
 import Datepicker from './UI/Datepicker';
 
 
-import InterfaceRest from './Interfaces/Rest';
-
 try {
 
     require('../../styles/main.scss');

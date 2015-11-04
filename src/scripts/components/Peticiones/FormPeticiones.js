@@ -3,7 +3,6 @@
 import React from 'react/addons';
 import ReactSuperSelect from 'React-Super-Select';
 import Loading from '../UI/Loading';
-import Select from '../UI/Select';
 import { State, Navigation, TransitionHook } from 'react-router';
 
 

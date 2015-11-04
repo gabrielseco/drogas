@@ -3,7 +3,6 @@
 import React from 'react/addons';
 import Datepicker from 'react-datepicker';
 import ReactSuperSelect from 'React-Super-Select';
-import Select from '../UI/Select';
 import { State, Navigation, TransitionHook } from 'react-router';
 
 
