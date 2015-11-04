@@ -14,12 +14,15 @@ let BuscadorFechas = React.createClass({
     },
     componentWillMount(){
       this.props.flux.getActions('peticiones').peticionesFrom(this.props.fechaInicial).then((res)=> {
-        console.log('data for table', res);
+        //console.log('data for table', res);
         this.setState({data: res});
       });
     },
+    componentDidMount(){
+      this.refs.identificacion.getDOMNode().focus();
+    },
     handle(){
-      console.log('handle');
+      //console.log('handle');
 
       var fechaInicio,fechaFinal;
       fechaInicio = document.getElementById('fechaInicio').value;
@@ -30,8 +33,6 @@ let BuscadorFechas = React.createClass({
         fechaFinal: fechaFinal
       };
 
-      console.log('send',params);
-
       this.props.flux.getActions('peticiones').peticionesFrom(params).then((res)=> {
         console.log('data for table', res);
         this.setState({data: res});
@@ -41,20 +42,21 @@ let BuscadorFechas = React.createClass({
     render() {
         return (
           <div>
-          <div className="col-md-offset-4">
-          <form className="form-inline">
-          <div className="form-group">
-            <label htmlFor="fechaInicio">Fecha Inicio</label>
-            <Datepicker name="fechaInicio"/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="fecha Final">Fecha Final</label>
-            <Datepicker name="fechaFinal"/>
-          </div>
-          <button type="button" className="btn btn-default" onClick={this.handle}>Enviar Peticiones</button>
-          </form>
-          </div>
-          <UITable data={this.state.data} flux={this.props.flux} />
+            <div className="col-md-offset-4">
+              <form className="form-inline">
+                <div className="form-group">
+                  <label htmlFor="fechaInicio">Fecha Inicio</label>
+                  <Datepicker name="fechaInicio"/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="fecha Final">Fecha Final</label>
+                  <Datepicker name="fechaFinal"/>
+                </div>
+                <button type="button" className="btn btn-default"
+                        onClick={this.handle}>Enviar Peticiones</button>
+              </form>
+            </div>
+            <UITable data={this.state.data} flux={this.props.flux} />
           </div>
         );
     }

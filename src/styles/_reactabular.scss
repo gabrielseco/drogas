@@ -110,13 +110,13 @@ table {
   float: right;
 }
 
-.table-react td:nth-child(2),.table-react td:nth-child(5),.table-react td:nth-child(6), .table-react td:nth-child(7){
-  text-align: right;
+.table-react th,td {
+  width:10%;
+}
+.table-react td:nth-child(2),.table-react td:nth-child(5){
+  //text-align: right;
 }
 
-.table-react th, .table-react td:nth-child(3), .table-react td:nth-child(4) {
-  text-align: center;
-}
 
 
 

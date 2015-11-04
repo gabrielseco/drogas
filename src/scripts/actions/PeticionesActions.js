@@ -122,6 +122,30 @@ let serverSendPeticion = async function (apiendpoint, data) {
 
 };
 
+
+let serverModifyPeticion = async function(apiendpoint, data) {
+  var paciente = data.pacientes.id;
+  var medico = data.medicos.id;
+  var identificacion = data.identificacion;
+
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
+
+  var velneo = null;
+  var url = "modificar_peticion?id="+ID+"&ID_PETICION="+data.id+"&procedencia="+ID_PROCEDENCIA+"&token="+TOKEN+"&pacientes="+paciente+"&medicos="+medico+"&identificacion="+identificacion;
+
+  console.log('modificar petición', apiendpoint + url);
+
+  velneo = await axios.get(apiendpoint + url);
+
+
+  return velneo.data;
+
+
+
+};
+
 let serverFetchPeticion = async function(apiendpoint, params, medicos, pacientes){
   var ID = sessionStorage.getItem('ID');
   var TOKEN = sessionStorage.getItem('TOKEN');
@@ -185,22 +209,25 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
 
   var velneo = await axios.get(apiendpoint + url);
 
-  //console.log('velneo data', velneo.data);
+  console.log('velneo data', velneo.data);
 
-  for(var i = 0; i < velneo.data.length; i++){
-    velneo.data[i].PRUEBAS_PENDIENTES = parseInt(velneo.data[i].PRUEBAS_PENDIENTES);
-    var fecha = velneo.data[i].Fecha.split("/");
-    velneo.data[i].Fecha = fecha[1] + "/" + fecha[0] + "/"+ fecha[2];
-    if(velneo.data[i].Nombre == ''){
-      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Apellidos;
-    } else if( velneo.data[i].Apellidos === ''){
-      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre;
-    } else {
-      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre + ", " + velneo.data[i].Apellidos ;
+  if(velneo.data !== ']'){
+
+    for(var i = 0; i < velneo.data.length; i++){
+      velneo.data[i].PRUEBAS_PENDIENTES = parseInt(velneo.data[i].PRUEBAS_PENDIENTES);
+      var fecha = velneo.data[i].Fecha.split("/");
+      velneo.data[i].Fecha = fecha[1] + "/" + fecha[0] + "/"+ fecha[2];
+      if(velneo.data[i].Nombre == ''){
+        velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Apellidos;
+      } else if( velneo.data[i].Apellidos === ''){
+        velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre;
+      } else {
+        velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre + ", " + velneo.data[i].Apellidos ;
+      }
     }
-  }
+}
 
-  return velneo.data;
+  return velneo.data === ']' ? '' : velneo.data ;
 
 };
 
@@ -241,6 +268,13 @@ export class PeticionesActions extends Actions {
     async sendPeticion(peticionData){
       const response = await serverSendPeticion(this.apiendpoint, peticionData);
       return response;
+    }
+
+    async modificarPeticion(peticionData) {
+
+      const response = await serverModifyPeticion(this.apiendpoint, peticionData);
+      return response;
+
     }
 
     async fetchPeticion(params, pacientes, medicos){

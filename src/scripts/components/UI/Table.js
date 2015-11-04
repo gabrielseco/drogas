@@ -100,13 +100,14 @@ onPerPage(e) {
   });
 },
 render() {
-        if(this.props.data === ''){
+      console.log(this.props.data);
+        if(this.props.data === ""){
           return (
               <div>
-                <p className='text-center'>No hay datos para mostrar. Hoy no has hecho ninguna petición</p>
+                <p className='text-center'>No hay datos para mostrar.</p>
               </div>
           );
-        } else {
+        }  else if (this.props.data > ''){
           var dataPagination = this.props.data;
           //console.log('data',dataPagination);
           var pagination = this.state.pagination;

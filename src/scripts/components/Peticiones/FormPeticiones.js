@@ -33,6 +33,9 @@ var FormPeticiones = React.createClass({
         analiticas: ''
       };
     },
+    componentDidMount(){
+      this.refs.identificacion.getDOMNode().focus();
+    },
     handleForm(e){
 
       var error = false;

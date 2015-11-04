@@ -36,30 +36,40 @@ var FormModificarPeticiones = React.createClass({
     componentWillMount(){
       var id = this.getParams().id;
       this.props.flux.getActions('peticiones').fetchPeticion(id, this.props.medicos, this.props.pacientes).then((res)=> {
-
+        var paciente = {id:res[0].Paciente.id};
+        var medico   = {id:res[0].Medico.id};
         this.setState({
-          form: res
+          form: res,
+          pacientes: paciente,
+          medicos: medico
         });
+
+        //console.log(this.state.pacientes);
+        //console.log(this.state.medicos);
       });
     },
     handleForm(e){
 
       var error = false;
+      var id = this.getParams().id;
+
       e.preventDefault();
 
       var data = {
         identificacion: this.refs.identificacion.getDOMNode().value,
         pacientes: this.state.pacientes,
         medicos: this.state.medicos,
+        id: id
       };
 
 
-      console.log(JSON.stringify(data));
+      //console.log(JSON.stringify(data));
 
       this.props.flux.getActions('peticiones').modificarPeticion(data).then((res)=> {
-        console.log('res modificar peticion', res);
+        //console.log('res modificar peticion', res);
         if(res[0].Resultado === 200){
           console.log('Petición modificar');
+          this.transitionTo('home');
         }
         else if(res[0].Resultado === 500){
           console.log('error al modificar');

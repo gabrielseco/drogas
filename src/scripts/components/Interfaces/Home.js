@@ -12,8 +12,11 @@ import { Link } from 'react-router';
 
 var texto = "";
 var centro = "";
-var fechaInicial = moment().format('MM/DD/YYYY');;
-var fechaFinal = '';
+
+var footer = {
+  paddingTop: '230px',
+
+};
 
 let InterfaceHome = React.createClass({
     getInitialState(){
@@ -36,8 +39,8 @@ let InterfaceHome = React.createClass({
         return (
             <div>
               <BreadCrumb centro={centro} texto="Inicio &gt; Listado de peticiones"/>
-              <BuscadorFechas flux={this.props.flux} fechaInicial={fechaInicial}/>
-              <Footer/>
+              <BuscadorFechas flux={this.props.flux}/>
+              <Footer style={footer}/>
             </div>
         );
       }
