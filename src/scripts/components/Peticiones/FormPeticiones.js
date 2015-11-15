@@ -105,8 +105,7 @@ var FormPeticiones = React.createClass({
     },
     render(){
     return (
-      <div className="container">
-        <div className="row">
+      <div className="container" id='peticiones'>
           <form className="form-horizontal" onSubmit={this.handleForm}id="addPeticiones" method="post" role="form">
 
             <div className="form-group">
@@ -141,10 +140,9 @@ var FormPeticiones = React.createClass({
               </div>
               <br/><br/>
               <div className="pull-right">
-                <input type="submit" value="Enviar"/>
+                <input type="submit" className='btn' value="Enviar"/>
               </div>
           </form>
-        </div>
         <br/>
       </div>
     );

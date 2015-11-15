@@ -15,9 +15,9 @@ let Datepicker = React.createClass({
         return (
           <div ref="myRef" className="input-group date">
             <input id={this.props.name} type="text" className="form-control" name="date"/>
-            <div className="input-group-addon">
-                <span className="fa fa-calendar"></span>
-            </div>
+            <span className="input-group-addon">
+                <span className="glyphicon glyphicon-calendar"></span>
+            </span>
           </div>
 
         );

@@ -67,7 +67,7 @@ let serverSendMessage = async function(apiendpoint, formContent) {
           'from_email': 'ggarciaseco@gmail.com',
           'to': [
               {
-                'email': 'casaguito@msn.com',
+                'email': 'joseenrique.garciagonzalez@siemens.com',
                 'name': '',
                 'type': 'to'
               }

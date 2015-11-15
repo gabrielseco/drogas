@@ -16,8 +16,8 @@ table {
 }
 
 .table-react{
-  padding-left:50px;
-  padding-right:50px;
+  padding-left:0px;
+  padding-right:0px;
 }
 
 .edit-btn{
@@ -88,11 +88,11 @@ table {
 .search-container{
   input{
     //@include input__reset($display:inline-block,$width:40%);
-    width: 40%;
+    width: 100%;
     font-family: Montserrat,Arial,Sans-Serif;
     font-size: 14px;
-    background: #F5F5F5;
-    border: 2px solid #F5F5F5;
+    background: #FFF;
+    border: 1px solid rgba(51, 51, 51, 0.45);
     padding: 14px 18px;
     -webkit-transition: border-color .2s ease-in;
     -moz-transition: border-color .2s ease-in;
@@ -117,6 +117,9 @@ table {
   //text-align: right;
 }
 
+.search-container select {
+  display: none;
+}
 
 
 
@@ -135,6 +138,10 @@ table {
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #ddd;
+
+    a{
+      color:#000;
+    }
   }
   .selected{
   z-index: 2;

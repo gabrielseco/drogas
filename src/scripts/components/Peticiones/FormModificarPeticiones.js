@@ -116,8 +116,7 @@ var FormModificarPeticiones = React.createClass({
       if(this.state.form !== ''){
 
       return (
-      <div className="container">
-        <div className="row">
+      <div className="container" id='peticiones'>
           <form className="form-horizontal" onSubmit={this.handleForm} id="addPeticiones" method="post" role="form">
 
             <div className="form-group">
@@ -144,12 +143,12 @@ var FormModificarPeticiones = React.createClass({
                                 initialValue={this.state.form[0].Paciente}/>
               </div>
               </div>
+
               <br/><br/>
               <div className="pull-right">
-                <input type="submit" value="Enviar"/>
+                <input type="submit" className='btn' value="Enviar"/>
               </div>
           </form>
-        </div>
         <br/>
       </div>
     );

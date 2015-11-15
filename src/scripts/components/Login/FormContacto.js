@@ -43,8 +43,13 @@ var FormContacto = React.createClass({
         this.props.flux.getActions('login').sendContact(data).then((res) =>{
           console.log('res', res);
           if(res[0].Resultado === 200){
-            console.log('Contacto envíado mira el correo');
+            console.log('Contacto enviado mira el correo');
             document.getElementById('mensaje_exito').className = 'alert-info';
+
+            this.refs.nombre.getDOMNode().value = '';
+            this.refs.asunto.getDOMNode().value = '';
+            this.refs.observaciones.getDOMNode().value = '';
+
           }
           else if(res[0].Resultado === 500){
             console.log('error al enviar el contacto');

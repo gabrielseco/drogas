@@ -1,9 +1,9 @@
-input[type=text], input[type=password], select,textarea {
+input[type=text], input[type=password],textarea {
     width: 100%;
     font-family: Montserrat,Arial,Sans-Serif;
     font-size: 14px;
-    background: #F5F5F5;
-    border: 2px solid #F5F5F5;
+    background: #FFF;
+    border: 1px solid rgba(51, 51, 51, 0.45);
     padding: 14px 18px;
     -webkit-transition: border-color .2s ease-in;
     -moz-transition: border-color .2s ease-in;
@@ -22,7 +22,9 @@ input[type=text], input[type=password], select,textarea {
   }
 
   input[type='text'][disabled]{
-    background-color: #ccc;
+    background-color: #eee;
+    cursor: not-allowed;
+
   }
 
   .form-control {

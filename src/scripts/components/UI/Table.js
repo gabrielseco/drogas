@@ -153,9 +153,7 @@ render() {
                     onSelect={this.onSelect}>
                </Paginator>
             </div>
-            <div className='pull-left'>
-            <Link to="altaPeticion" className="btn btn-default pull-right">Alta Petición</Link>
-            </div>
+            
         </div>
           )
         }

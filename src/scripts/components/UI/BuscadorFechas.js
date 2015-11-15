@@ -41,20 +41,27 @@ let BuscadorFechas = React.createClass({
     },
     render() {
         return (
-          <div>
-            <div className="col-md-offset-4">
-              <form className="form-inline">
-                <div className="form-group">
-                  <label htmlFor="fechaInicio">Fecha Inicio</label>
-                  <Datepicker name="fechaInicio"/>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="fecha Final">Fecha Final</label>
-                  <Datepicker name="fechaFinal"/>
-                </div>
-                <button type="button" className="btn btn-default"
-                        onClick={this.handle}>Enviar Peticiones</button>
-              </form>
+          <div className="container" id='buscador'>
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="row">
+                <div className="col-md-6">
+                  <div className="form-group">
+                    <label htmlFor="fechaInicio">Fecha Inicio</label>
+                    <Datepicker name="fechaInicio"/>
+                  </div>
+                  </div>
+                  <div className="col-md-6">
+                  <div className="form-group">
+                    <label htmlFor="fecha Final">Fecha Final</label>
+                    <Datepicker name="fechaFinal"/>
+                  </div>
+                  <button type="button" className="btn btn-default pull-right"
+                          onClick={this.handle}>Enviar Peticiones</button>
+                  </div>
+                  </div>
+
+              </div>
             </div>
             <UITable data={this.state.data} flux={this.props.flux} />
           </div>

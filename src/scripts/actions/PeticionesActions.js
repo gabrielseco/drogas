@@ -191,7 +191,7 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
   //console.log('params automatic',typeof params);
 
   if(typeof params === 'string' ){
-    url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+params;
+    url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FI_STR="+params;
 
   } else {
     var fechaInicio = params.fechaInicio.split("/");
@@ -203,11 +203,13 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
     fechaFinal = fechaFinal[1] + "/" + fechaFinal[0] + "/"+ fechaFinal[2];
 
     //console.log(params.fechaInicio);
-    url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FECHAI="+fechaInicio+"&FECHAF="+fechaFinal;
+    url = "peticiones_fechas?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&FI_STR="+fechaInicio+"&FF_STR="+fechaFinal;
 
   }
 
   var velneo = await axios.get(apiendpoint + url);
+
+  console.log(apiendpoint + url);
 
   console.log('velneo data', velneo.data);
 

@@ -33,8 +33,6 @@ try {
         <Route name="contacto" path="/contacto" handler={InterfaceContacto} />
         <Route name="altaPeticion" path="/altapeticion" handler={AltaPeticion} />
         <Route name="modificarPeticion" path="/modificarpeticion/:id" handler={ModificarPeticion} />
-        <Route name="/datepicker" path="/datepicker" handler={Datepicker} />
-
       </Route>
     );
 

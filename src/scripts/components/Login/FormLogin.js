@@ -21,6 +21,9 @@ var mensajes = {
 
 var FormLogin = React.createClass({
     mixins: [ Navigation, TransitionHook, State ],
+    componentDidMount(){
+      this.refs.usuario.getDOMNode().focus();
+    },
     handleForm(e){
 
       var error = false;
