@@ -43,6 +43,8 @@ var FormModificarPeticiones = React.createClass({
           medicos: medico
         });
 
+        console.log('form'+JSON.stringify(this.state.form));
+
         //console.log(this.state.pacientes);
         //console.log(this.state.medicos);
       });
@@ -113,8 +115,13 @@ var FormModificarPeticiones = React.createClass({
       });
     },
     render(){
-      if(this.state.form !== ''){
-
+      if(this.state.form !== '') {
+        if(this.state.form[0].analiticas.length === 0) {
+          var list =  'No hay resultados';
+        }
+        var list = this.state.form[0].analiticas.map((res,i) => {
+          return (<li key={i}>{res.Analitica}</li>)
+        });
       return (
       <div className="container" id='peticiones'>
           <form className="form-horizontal" onSubmit={this.handleForm} id="addPeticiones" method="post" role="form">
@@ -141,6 +148,10 @@ var FormModificarPeticiones = React.createClass({
                                 onChange={this.handlerPacientes}
                                 searchable={true}
                                 initialValue={this.state.form[0].Paciente}/>
+              </div>
+              <label className="control-label col-md-2">Analíticas</label>
+              <div className="col-md-4">
+                {list}
               </div>
               </div>
 

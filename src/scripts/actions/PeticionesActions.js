@@ -152,7 +152,6 @@ let serverFetchPeticion = async function(apiendpoint, params, medicos, pacientes
   var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
 
   var url = "peticion?ID="+params+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&USER_ID="+ID;
-
   var velneo = await axios.get(apiendpoint + url);
 
   //console.log('medicos', medicos);
@@ -171,6 +170,14 @@ let serverFetchPeticion = async function(apiendpoint, params, medicos, pacientes
       velneo.data[0].Paciente = pacientes[i];
     }
   }
+
+  var url = "peticion_analiticas?ID="+params+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&USER_ID="+ID;
+
+  var analiticas = await axios.get(apiendpoint + url );
+  console.log(apiendpoint + url);
+
+
+  velneo.data[0].analiticas = analiticas.data;
 
   //console.log('datos de la peticion for',velneo.data);
 
