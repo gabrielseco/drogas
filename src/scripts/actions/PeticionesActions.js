@@ -218,9 +218,9 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
 
   console.log(apiendpoint + url);
 
-  console.log('velneo data', velneo.data);
-
-  if(velneo.data !== ']'){
+  if(velneo.data === ']'){
+    return [];
+  }
 
     for(var i = 0; i < velneo.data.length; i++){
       velneo.data[i].PRUEBAS_PENDIENTES = parseInt(velneo.data[i].PRUEBAS_PENDIENTES);
@@ -234,9 +234,40 @@ let serverFetchPeticionesFrom = async function(apiendpoint, params){
         velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre + ", " + velneo.data[i].Apellidos ;
       }
     }
-}
 
-  return velneo.data === ']' ? '' : velneo.data ;
+  return velneo.data;
+
+};
+
+
+
+let serverFetchPeticionFromPaciente = async function(apiendpoint, paciente) {
+  var ID = sessionStorage.getItem('ID');
+  var TOKEN = sessionStorage.getItem('TOKEN');
+  var ID_PROCEDENCIA = sessionStorage.getItem('ID_PROCEDENCIA');
+  var url = "peticiones_paciente?ID="+ID+"&TOKEN="+TOKEN+"&PROCEDENCIA="+ID_PROCEDENCIA+"&ID_PACIENTE="+paciente;
+  console.log(apiendpoint + url);
+
+  var velneo = await axios.get(apiendpoint + url);
+
+  if(velneo.data === ']'){
+    return [];
+  }
+  for(var i = 0; i < velneo.data.length; i++){
+    velneo.data[i].PRUEBAS_PENDIENTES = parseInt(velneo.data[i].PRUEBAS_PENDIENTES);
+    var fecha = velneo.data[i].Fecha.split("/");
+    velneo.data[i].Fecha = fecha[1] + "/" + fecha[0] + "/"+ fecha[2];
+    if(velneo.data[i].Nombre == ''){
+      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Apellidos;
+    } else if( velneo.data[i].Apellidos === ''){
+      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre;
+    } else {
+      velneo.data[i].NOMBRE_COMPLETO = velneo.data[i].Nombre + ", " + velneo.data[i].Apellidos ;
+    }
+  }
+
+
+  return velneo.data;
 
 };
 
@@ -292,6 +323,14 @@ export class PeticionesActions extends Actions {
 
       return response;
 
+    }
+
+    async peticionesFromPaciente(paciente) {
+      console.log(paciente);
+
+      const response = await serverFetchPeticionFromPaciente(this.apiendpoint, paciente);
+
+      return response;
     }
 
 

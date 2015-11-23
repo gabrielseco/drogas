@@ -100,8 +100,15 @@ onPerPage(e) {
   });
 },
 render() {
-      console.log(this.props.data);
-        if(this.props.data === ""){
+      if(this.props.data.length === 0){
+          console.log('0 data');
+          return (
+            <div>
+              <p className='text-center'>No se encontraron peticiones.</p>
+            </div>
+          )
+        }
+        if(this.props.data === false){
           return (
               <div>
                 <p className='text-center'>No hay datos para mostrar.</p>
@@ -153,7 +160,7 @@ render() {
                     onSelect={this.onSelect}>
                </Paginator>
             </div>
-            
+
         </div>
           )
         }

@@ -3,23 +3,30 @@
 import React from 'react/addons';
 import Datepicker from './Datepicker';
 import UITable from './Table';
+import moment from 'moment'
 
 let BuscadorFechas = React.createClass({
     getInitialState(){
       return {
         fechaInicial: this.props.fechaInicial,
         fechaFinal: this.props.fechaFinal,
-        data: ''
+        data: false
       };
     },
     componentWillMount(){
-      this.props.flux.getActions('peticiones').peticionesFrom(this.props.fechaInicial).then((res)=> {
-        //console.log('data for table', res);
+      var now = moment(new Date());
+
+      var date = now.format("DD/MM/YYYY");
+
+      var params = {
+        fechaInicio: date,
+        fechaFinal: date
+      };
+
+      this.props.flux.getActions('peticiones').peticionesFrom(params).then((res)=> {
+        console.log('fechas', res);
         this.setState({data: res});
       });
-    },
-    componentDidMount(){
-      this.refs.identificacion.getDOMNode().focus();
     },
     handle(){
       //console.log('handle');
@@ -34,7 +41,7 @@ let BuscadorFechas = React.createClass({
       };
 
       this.props.flux.getActions('peticiones').peticionesFrom(params).then((res)=> {
-        console.log('data for table', res);
+        console.log('data fechas', res);
         this.setState({data: res});
       });
 

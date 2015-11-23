@@ -9,12 +9,11 @@ import { AppFlux } from '../flux/AppFlux';
 import App from './App';
 import InterfaceLogin from './Interfaces/Login';
 import InterfaceHome from './Interfaces/Home';
+import InterfacePacientes from './Interfaces/Pacientes';
 import InterfaceConfiguracion from './Interfaces/Configuracion';
 import InterfaceContacto from './Interfaces/Contacto';
 import AltaPeticion from './Interfaces/AltaPeticion';
 import ModificarPeticion from './Interfaces/ModificarPeticion';
-import Datepicker from './UI/Datepicker';
-
 
 try {
 
@@ -29,6 +28,7 @@ try {
       <Route name="root" path="/" handler={App}>
         <DefaultRoute handler={InterfaceLogin} />
         <Route name="home" path="/home" handler={InterfaceHome} />
+        <Route name="pacientes" path="/pacientes" handler={InterfacePacientes} />
         <Route name="configuracion" path="/configuracion" handler={InterfaceConfiguracion} />
         <Route name="contacto" path="/contacto" handler={InterfaceContacto} />
         <Route name="altaPeticion" path="/altapeticion" handler={AltaPeticion} />
